@@ -47,6 +47,7 @@
             this.txt_codigo_cidade = new System.Windows.Forms.TextBox();
             this.lbl_nome_cidade = new System.Windows.Forms.Label();
             this.lbl_codigo_cidade = new System.Windows.Forms.Label();
+            this.btn_pesquisar = new System.Windows.Forms.Button();
             this.grp_buscar_cidades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).BeginInit();
             this.SuspendLayout();
@@ -54,6 +55,7 @@
             // grp_buscar_cidades
             // 
             this.grp_buscar_cidades.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grp_buscar_cidades.Controls.Add(this.btn_pesquisar);
             this.grp_buscar_cidades.Controls.Add(this.txt_pesquisar_nome);
             this.grp_buscar_cidades.Controls.Add(this.lbl_pesquisar_nome);
             this.grp_buscar_cidades.Controls.Add(this.txt_pesquisar_unidade_federal);
@@ -76,6 +78,7 @@
             this.txt_pesquisar_nome.Name = "txt_pesquisar_nome";
             this.txt_pesquisar_nome.Size = new System.Drawing.Size(100, 26);
             this.txt_pesquisar_nome.TabIndex = 9;
+            this.txt_pesquisar_nome.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txt_pesquisar_nome_KeyPress);
             // 
             // lbl_pesquisar_nome
             // 
@@ -118,6 +121,7 @@
             this.dgv_registros.Size = new System.Drawing.Size(600, 218);
             this.dgv_registros.TabIndex = 5;
             this.dgv_registros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_registros_CellDoubleClick);
+            this.dgv_registros.Click += new System.EventHandler(this.dgv_registros_Click);
             // 
             // txt_pesquisar_id
             // 
@@ -265,11 +269,24 @@
             this.lbl_codigo_cidade.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_codigo_cidade.AutoSize = true;
             this.lbl_codigo_cidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_codigo_cidade.Location = new System.Drawing.Point(8, 18);
+            this.lbl_codigo_cidade.Location = new System.Drawing.Point(4, 18);
             this.lbl_codigo_cidade.Name = "lbl_codigo_cidade";
             this.lbl_codigo_cidade.Size = new System.Drawing.Size(71, 19);
             this.lbl_codigo_cidade.TabIndex = 12;
             this.lbl_codigo_cidade.Text = "Código:";
+            // 
+            // btn_pesquisar
+            // 
+            this.btn_pesquisar.BackColor = System.Drawing.Color.Purple;
+            this.btn_pesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_pesquisar.ForeColor = System.Drawing.Color.White;
+            this.btn_pesquisar.Location = new System.Drawing.Point(658, 26);
+            this.btn_pesquisar.Name = "btn_pesquisar";
+            this.btn_pesquisar.Size = new System.Drawing.Size(100, 31);
+            this.btn_pesquisar.TabIndex = 10;
+            this.btn_pesquisar.Text = "Pesquisar";
+            this.btn_pesquisar.UseVisualStyleBackColor = false;
+            this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
             // 
             // FrmCidade
             // 
@@ -323,5 +340,6 @@
         private System.Windows.Forms.Label lbl_pesquisar_unidade_federal;
         private System.Windows.Forms.TextBox txt_pesquisar_nome;
         private System.Windows.Forms.Label lbl_pesquisar_nome;
+        private System.Windows.Forms.Button btn_pesquisar;
     }
 }

@@ -160,18 +160,22 @@ namespace Aplicativo_NET_Framawork_13.View
                 else if(dgv_registros.RowCount == 0)
                 {
 
-                    insercao.Incluir();
+                    if (MessageBox.Show("Deseja mesmo confirmar a adição de um novo registro ao banco de dados?", "Atenção!",
+                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
 
-                    
+                        insercao.Incluir();
 
-                    limpar_campos();
+                        limpar_campos();
 
-                    carregar_dgv();
+                        carregar_dgv();
 
-                    //gerar_id_codigo();
+                        //gerar_id_codigo();
 
-                    MessageBox.Show("Inserção efetuada com sucesso.", "Atenção!",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        MessageBox.Show("Inserção efetuada com sucesso.", "Atenção!",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
 
                 }
 
@@ -230,11 +234,22 @@ namespace Aplicativo_NET_Framawork_13.View
 
             if(String.IsNullOrEmpty(txt_nome_cidade.Text) && String.IsNullOrEmpty(txt_uf_cidade.Text)
                && String.IsNullOrEmpty(txt_pesquisar_id.Text) && String.IsNullOrEmpty(txt_pesquisar_nome.Text)
-               && String.IsNullOrEmpty(txt_pesquisar_unidade_federal.Text))
+               && String.IsNullOrEmpty(txt_pesquisar_unidade_federal.Text) && btn_pesquisar.Enabled == false)
             {
 
-                MessageBox.Show("Todos os campos já estão em branco.", "Atenção!",
+                MessageBox.Show("Não há nada a ser cancelado.", "Atenção!",
                                 MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+            }
+
+            else if(btn_pesquisar.Enabled == true)
+            {
+
+                txt_pesquisar_nome.Clear();
+
+                txt_pesquisar_nome.Enabled = false;
+
+                btn_pesquisar.Enabled = false;
 
             }
 
@@ -246,6 +261,8 @@ namespace Aplicativo_NET_Framawork_13.View
                 desabilitar_elementos();
 
             }
+
+            //carregar_dgv();
 
         }
 
@@ -306,6 +323,17 @@ namespace Aplicativo_NET_Framawork_13.View
 
         }
 
+        void busca_personalizada(string nome = null)
+        {
+
+            Model.Cidade cidade = new Model.Cidade();
+
+            cidade.SelectByName();
+
+            dgv_registros.DataSource = Database.tabela_de_dados;
+
+        }
+
         /*void gerar_id_codigo()
         {
 
@@ -330,6 +358,8 @@ namespace Aplicativo_NET_Framawork_13.View
         void desabilitar_elementos()
         {
 
+            // Desabilitando os elementos desnecessários:
+
             txt_pesquisar_nome.Enabled = false;
 
             txt_pesquisar_unidade_federal.Enabled = false;
@@ -337,6 +367,16 @@ namespace Aplicativo_NET_Framawork_13.View
             btn_alterar.Enabled = false;
 
             btn_excluir.Enabled = false;
+
+            btn_pesquisar.Enabled = false;
+
+            // Habilitando os elementos necessários:
+
+            txt_nome_cidade.Enabled = true;
+
+            txt_uf_cidade.Enabled = true;
+
+            btn_incluir.Enabled = true;
 
         }
 
@@ -361,6 +401,8 @@ namespace Aplicativo_NET_Framawork_13.View
 
                 }
 
+                // Habilitando os elementos necessários:
+
                 txt_pesquisar_nome.Enabled = true;
 
                 txt_pesquisar_unidade_federal.Enabled = true;
@@ -369,6 +411,16 @@ namespace Aplicativo_NET_Framawork_13.View
 
                 btn_excluir.Enabled = true;
 
+                // Desabilitando os elementos desnecessários:
+
+                txt_nome_cidade.Enabled = false;
+
+                txt_uf_cidade.Enabled = false;
+
+                btn_incluir.Enabled = false;
+
+                // Definido os valores das TextBoxes de pesquisa:
+
                 txt_pesquisar_id.Text = dgv_registros.CurrentRow.Cells[0].Value.ToString();
 
                 txt_pesquisar_nome.Text = dgv_registros.CurrentRow.Cells[1].Value.ToString();
@@ -376,6 +428,53 @@ namespace Aplicativo_NET_Framawork_13.View
                 txt_pesquisar_unidade_federal.Text = dgv_registros.CurrentRow.Cells[2].Value.ToString();
 
             }
+
+        }
+
+        private void txt_pesquisar_nome_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar))
+            {
+
+                e.Handled = false;
+
+                //busca_personalizada(txt_pesquisar_nome.Text);
+
+            }
+
+            else
+            {
+
+                e.Handled = true;
+
+            }
+
+        }
+
+        private void dgv_registros_Click(object sender, EventArgs e)
+        {
+
+            if(btn_pesquisar.Enabled == false)
+            {
+
+                MessageBox.Show("Digite no campo Nome e então clique em pesquisar para encontrar um determinado registro.",
+                                "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+            txt_pesquisar_nome.Enabled = true;
+
+            btn_pesquisar.Enabled = true;
+
+        }
+
+        private void btn_pesquisar_Click(object sender, EventArgs e)
+        {
+
+            txt_pesquisar_nome.Clear();
+
+            busca_personalizada(txt_pesquisar_nome.Text);
 
         }
 

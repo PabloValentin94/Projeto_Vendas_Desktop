@@ -21,9 +21,9 @@ namespace Aplicativo_NET_Framawork_13.View
 
             InitializeComponent();
 
-            dtpicker_data_nascimento.MaxDate = DateTime.Today;
+            dtpicker_data_nascimento_cliente.MaxDate = DateTime.Today;
 
-            dtpicker_data_nascimento.MinDate = new DateTime(1950, 01, 01);
+            dtpicker_data_nascimento_cliente.MinDate = new DateTime(1950, 01, 01);
 
             /*Database.Abrir_Conexao();
 
@@ -49,10 +49,6 @@ namespace Aplicativo_NET_Framawork_13.View
 
         }
 
-        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }

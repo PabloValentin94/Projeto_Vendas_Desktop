@@ -98,8 +98,8 @@ namespace Aplicativo_NET_Framawork_13
                                            "nome varchar(75)," +
                                            "cpf char(12)," +
                                            "telefone varchar(9)," +
-                                           "email varchar(100))"/* +
-                                           "data_nascimento date)"*/, conexao);
+                                           "email varchar(100)," +
+                                           "data_nascimento date)", conexao);
 
                 comando.ExecuteNonQuery();
 

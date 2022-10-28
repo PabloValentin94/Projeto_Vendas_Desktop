@@ -41,18 +41,18 @@
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_alterar = new System.Windows.Forms.Button();
             this.btn_incluir = new System.Windows.Forms.Button();
-            this.txt_uf_cidade = new System.Windows.Forms.TextBox();
-            this.lbl_uf_cidade = new System.Windows.Forms.Label();
-            this.txt_nome_cidade = new System.Windows.Forms.TextBox();
-            this.txt_codigo_cidade = new System.Windows.Forms.TextBox();
-            this.lbl_nome_cidade = new System.Windows.Forms.Label();
-            this.lbl_codigo_cidade = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.dtpicker_data_nascimento = new System.Windows.Forms.DateTimePicker();
-            this.label3 = new System.Windows.Forms.Label();
+            this.txt_cpf_cliente = new System.Windows.Forms.TextBox();
+            this.lbl_cpf_cliente = new System.Windows.Forms.Label();
+            this.txt_nome_cliente = new System.Windows.Forms.TextBox();
+            this.txt_codigo_cliente = new System.Windows.Forms.TextBox();
+            this.lbl_nome_cliente = new System.Windows.Forms.Label();
+            this.lbl_codigo_cliente = new System.Windows.Forms.Label();
+            this.txt_email_cliente = new System.Windows.Forms.TextBox();
+            this.lbl_email_cliente = new System.Windows.Forms.Label();
+            this.txt_telefone_cliente = new System.Windows.Forms.TextBox();
+            this.lbl_telefone_cliente = new System.Windows.Forms.Label();
+            this.dtpicker_data_nascimento_cliente = new System.Windows.Forms.DateTimePicker();
+            this.lbl_data_nascimento_cliente = new System.Windows.Forms.Label();
             this.grp_buscar_cidades.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).BeginInit();
             this.SuspendLayout();
@@ -209,154 +209,153 @@
             this.btn_incluir.UseVisualStyleBackColor = false;
             this.btn_incluir.Click += new System.EventHandler(this.btn_incluir_Click);
             // 
-            // txt_uf_cidade
+            // txt_cpf_cliente
             // 
-            this.txt_uf_cidade.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_uf_cidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_uf_cidade.Location = new System.Drawing.Point(8, 108);
-            this.txt_uf_cidade.MaxLength = 2;
-            this.txt_uf_cidade.Name = "txt_uf_cidade";
-            this.txt_uf_cidade.Size = new System.Drawing.Size(170, 26);
-            this.txt_uf_cidade.TabIndex = 29;
+            this.txt_cpf_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_cpf_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_cpf_cliente.Location = new System.Drawing.Point(8, 108);
+            this.txt_cpf_cliente.MaxLength = 2;
+            this.txt_cpf_cliente.Name = "txt_cpf_cliente";
+            this.txt_cpf_cliente.Size = new System.Drawing.Size(170, 26);
+            this.txt_cpf_cliente.TabIndex = 29;
             // 
-            // lbl_uf_cidade
+            // lbl_cpf_cliente
             // 
-            this.lbl_uf_cidade.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_uf_cidade.AutoSize = true;
-            this.lbl_uf_cidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_uf_cidade.Location = new System.Drawing.Point(4, 87);
-            this.lbl_uf_cidade.Name = "lbl_uf_cidade";
-            this.lbl_uf_cidade.Size = new System.Drawing.Size(50, 19);
-            this.lbl_uf_cidade.TabIndex = 28;
-            this.lbl_uf_cidade.Text = "C.P.F.";
+            this.lbl_cpf_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_cpf_cliente.AutoSize = true;
+            this.lbl_cpf_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_cpf_cliente.Location = new System.Drawing.Point(4, 87);
+            this.lbl_cpf_cliente.Name = "lbl_cpf_cliente";
+            this.lbl_cpf_cliente.Size = new System.Drawing.Size(50, 19);
+            this.lbl_cpf_cliente.TabIndex = 28;
+            this.lbl_cpf_cliente.Text = "C.P.F.";
             // 
-            // txt_nome_cidade
+            // txt_nome_cliente
             // 
-            this.txt_nome_cidade.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_nome_cidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nome_cidade.Location = new System.Drawing.Point(114, 40);
-            this.txt_nome_cidade.Name = "txt_nome_cidade";
-            this.txt_nome_cidade.Size = new System.Drawing.Size(376, 26);
-            this.txt_nome_cidade.TabIndex = 27;
+            this.txt_nome_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_nome_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_nome_cliente.Location = new System.Drawing.Point(114, 40);
+            this.txt_nome_cliente.Name = "txt_nome_cliente";
+            this.txt_nome_cliente.Size = new System.Drawing.Size(376, 26);
+            this.txt_nome_cliente.TabIndex = 27;
             // 
-            // txt_codigo_cidade
+            // txt_codigo_cliente
             // 
-            this.txt_codigo_cidade.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_codigo_cidade.Enabled = false;
-            this.txt_codigo_cidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigo_cidade.Location = new System.Drawing.Point(8, 40);
-            this.txt_codigo_cidade.Name = "txt_codigo_cidade";
-            this.txt_codigo_cidade.Size = new System.Drawing.Size(100, 26);
-            this.txt_codigo_cidade.TabIndex = 26;
-            this.txt_codigo_cidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_codigo_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_codigo_cliente.Enabled = false;
+            this.txt_codigo_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_codigo_cliente.Location = new System.Drawing.Point(8, 40);
+            this.txt_codigo_cliente.Name = "txt_codigo_cliente";
+            this.txt_codigo_cliente.Size = new System.Drawing.Size(100, 26);
+            this.txt_codigo_cliente.TabIndex = 26;
+            this.txt_codigo_cliente.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
-            // lbl_nome_cidade
+            // lbl_nome_cliente
             // 
-            this.lbl_nome_cidade.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_nome_cidade.AutoSize = true;
-            this.lbl_nome_cidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nome_cidade.Location = new System.Drawing.Point(111, 19);
-            this.lbl_nome_cidade.Name = "lbl_nome_cidade";
-            this.lbl_nome_cidade.Size = new System.Drawing.Size(138, 19);
-            this.lbl_nome_cidade.TabIndex = 25;
-            this.lbl_nome_cidade.Text = "Nome Completo:";
+            this.lbl_nome_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_nome_cliente.AutoSize = true;
+            this.lbl_nome_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nome_cliente.Location = new System.Drawing.Point(111, 19);
+            this.lbl_nome_cliente.Name = "lbl_nome_cliente";
+            this.lbl_nome_cliente.Size = new System.Drawing.Size(138, 19);
+            this.lbl_nome_cliente.TabIndex = 25;
+            this.lbl_nome_cliente.Text = "Nome Completo:";
             // 
-            // lbl_codigo_cidade
+            // lbl_codigo_cliente
             // 
-            this.lbl_codigo_cidade.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.lbl_codigo_cidade.AutoSize = true;
-            this.lbl_codigo_cidade.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_codigo_cidade.Location = new System.Drawing.Point(8, 19);
-            this.lbl_codigo_cidade.Name = "lbl_codigo_cidade";
-            this.lbl_codigo_cidade.Size = new System.Drawing.Size(71, 19);
-            this.lbl_codigo_cidade.TabIndex = 24;
-            this.lbl_codigo_cidade.Text = "Código:";
+            this.lbl_codigo_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_codigo_cliente.AutoSize = true;
+            this.lbl_codigo_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_codigo_cliente.Location = new System.Drawing.Point(4, 18);
+            this.lbl_codigo_cliente.Name = "lbl_codigo_cliente";
+            this.lbl_codigo_cliente.Size = new System.Drawing.Size(71, 19);
+            this.lbl_codigo_cliente.TabIndex = 24;
+            this.lbl_codigo_cliente.Text = "Código:";
             // 
-            // textBox1
+            // txt_email_cliente
             // 
-            this.textBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(496, 40);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(297, 26);
-            this.textBox1.TabIndex = 37;
+            this.txt_email_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_email_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_email_cliente.Location = new System.Drawing.Point(496, 40);
+            this.txt_email_cliente.Name = "txt_email_cliente";
+            this.txt_email_cliente.Size = new System.Drawing.Size(297, 26);
+            this.txt_email_cliente.TabIndex = 37;
             // 
-            // label1
+            // lbl_email_cliente
             // 
-            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(492, 19);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 19);
-            this.label1.TabIndex = 36;
-            this.label1.Text = "E-mail:";
+            this.lbl_email_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_email_cliente.AutoSize = true;
+            this.lbl_email_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_email_cliente.Location = new System.Drawing.Point(492, 19);
+            this.lbl_email_cliente.Name = "lbl_email_cliente";
+            this.lbl_email_cliente.Size = new System.Drawing.Size(62, 19);
+            this.lbl_email_cliente.TabIndex = 36;
+            this.lbl_email_cliente.Text = "E-mail:";
             // 
-            // textBox2
+            // txt_telefone_cliente
             // 
-            this.textBox2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.textBox2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(184, 108);
-            this.textBox2.MaxLength = 2;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 26);
-            this.textBox2.TabIndex = 39;
+            this.txt_telefone_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_telefone_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_telefone_cliente.Location = new System.Drawing.Point(184, 108);
+            this.txt_telefone_cliente.MaxLength = 2;
+            this.txt_telefone_cliente.Name = "txt_telefone_cliente";
+            this.txt_telefone_cliente.Size = new System.Drawing.Size(152, 26);
+            this.txt_telefone_cliente.TabIndex = 39;
             // 
-            // label2
+            // lbl_telefone_cliente
             // 
-            this.label2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(180, 87);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(80, 19);
-            this.label2.TabIndex = 38;
-            this.label2.Text = "Telefone:";
+            this.lbl_telefone_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_telefone_cliente.AutoSize = true;
+            this.lbl_telefone_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_telefone_cliente.Location = new System.Drawing.Point(180, 87);
+            this.lbl_telefone_cliente.Name = "lbl_telefone_cliente";
+            this.lbl_telefone_cliente.Size = new System.Drawing.Size(80, 19);
+            this.lbl_telefone_cliente.TabIndex = 38;
+            this.lbl_telefone_cliente.Text = "Telefone:";
             // 
-            // dtpicker_data_nascimento
+            // dtpicker_data_nascimento_cliente
             // 
-            this.dtpicker_data_nascimento.CalendarFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpicker_data_nascimento.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtpicker_data_nascimento.Location = new System.Drawing.Point(342, 109);
-            this.dtpicker_data_nascimento.Name = "dtpicker_data_nascimento";
-            this.dtpicker_data_nascimento.Size = new System.Drawing.Size(451, 20);
-            this.dtpicker_data_nascimento.TabIndex = 40;
-            this.dtpicker_data_nascimento.ValueChanged += new System.EventHandler(this.dateTimePicker1_ValueChanged);
+            this.dtpicker_data_nascimento_cliente.CalendarFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtpicker_data_nascimento_cliente.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpicker_data_nascimento_cliente.Location = new System.Drawing.Point(342, 109);
+            this.dtpicker_data_nascimento_cliente.Name = "dtpicker_data_nascimento_cliente";
+            this.dtpicker_data_nascimento_cliente.Size = new System.Drawing.Size(451, 20);
+            this.dtpicker_data_nascimento_cliente.TabIndex = 40;
             // 
-            // label3
+            // lbl_data_nascimento_cliente
             // 
-            this.label3.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(338, 87);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 19);
-            this.label3.TabIndex = 41;
-            this.label3.Text = "Data de Nascimento:";
+            this.lbl_data_nascimento_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_data_nascimento_cliente.AutoSize = true;
+            this.lbl_data_nascimento_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_data_nascimento_cliente.Location = new System.Drawing.Point(338, 87);
+            this.lbl_data_nascimento_cliente.Name = "lbl_data_nascimento_cliente";
+            this.lbl_data_nascimento_cliente.Size = new System.Drawing.Size(168, 19);
+            this.lbl_data_nascimento_cliente.TabIndex = 41;
+            this.lbl_data_nascimento_cliente.Text = "Data de Nascimento:";
             // 
             // FrmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 514);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.dtpicker_data_nascimento);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.lbl_data_nascimento_cliente);
+            this.Controls.Add(this.dtpicker_data_nascimento_cliente);
+            this.Controls.Add(this.txt_telefone_cliente);
+            this.Controls.Add(this.lbl_telefone_cliente);
+            this.Controls.Add(this.txt_email_cliente);
+            this.Controls.Add(this.lbl_email_cliente);
             this.Controls.Add(this.grp_buscar_cidades);
             this.Controls.Add(this.btn_fechar);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.btn_cancelar);
             this.Controls.Add(this.btn_alterar);
             this.Controls.Add(this.btn_incluir);
-            this.Controls.Add(this.txt_uf_cidade);
-            this.Controls.Add(this.lbl_uf_cidade);
-            this.Controls.Add(this.txt_nome_cidade);
-            this.Controls.Add(this.txt_codigo_cidade);
-            this.Controls.Add(this.lbl_nome_cidade);
-            this.Controls.Add(this.lbl_codigo_cidade);
+            this.Controls.Add(this.txt_cpf_cliente);
+            this.Controls.Add(this.lbl_cpf_cliente);
+            this.Controls.Add(this.txt_nome_cliente);
+            this.Controls.Add(this.txt_codigo_cliente);
+            this.Controls.Add(this.lbl_nome_cliente);
+            this.Controls.Add(this.lbl_codigo_cliente);
             this.Name = "FrmCliente";
             this.Text = "FrmCliente";
             this.grp_buscar_cidades.ResumeLayout(false);
@@ -382,17 +381,17 @@
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_alterar;
         private System.Windows.Forms.Button btn_incluir;
-        private System.Windows.Forms.TextBox txt_uf_cidade;
-        private System.Windows.Forms.Label lbl_uf_cidade;
-        private System.Windows.Forms.TextBox txt_nome_cidade;
-        private System.Windows.Forms.TextBox txt_codigo_cidade;
-        private System.Windows.Forms.Label lbl_nome_cidade;
-        private System.Windows.Forms.Label lbl_codigo_cidade;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.DateTimePicker dtpicker_data_nascimento;
-        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.TextBox txt_cpf_cliente;
+        private System.Windows.Forms.Label lbl_cpf_cliente;
+        private System.Windows.Forms.TextBox txt_nome_cliente;
+        private System.Windows.Forms.TextBox txt_codigo_cliente;
+        private System.Windows.Forms.Label lbl_nome_cliente;
+        private System.Windows.Forms.Label lbl_codigo_cliente;
+        private System.Windows.Forms.TextBox txt_email_cliente;
+        private System.Windows.Forms.Label lbl_email_cliente;
+        private System.Windows.Forms.TextBox txt_telefone_cliente;
+        private System.Windows.Forms.Label lbl_telefone_cliente;
+        private System.Windows.Forms.DateTimePicker dtpicker_data_nascimento_cliente;
+        private System.Windows.Forms.Label lbl_data_nascimento_cliente;
     }
 }
