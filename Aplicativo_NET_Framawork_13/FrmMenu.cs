@@ -47,6 +47,24 @@ namespace Aplicativo_NET_Framawork_13
 
         }
 
+        private void categoriasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FrmCategoria form = new FrmCategoria();
+
+            form.Show();
+
+        }
+
+        private void marcasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FrmMarca form = new FrmMarca();
+
+            form.Show();
+
+        }
+
     }
 
 }
