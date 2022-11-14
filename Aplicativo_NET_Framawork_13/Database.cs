@@ -30,7 +30,7 @@ namespace Aplicativo_NET_Framawork_13
 
                 // Criando uma conexão com o MySQL e abrindo-a.
 
-                conexao = new MySqlConnection("server=localhost;port=3307;uid=root;pwd=etecjau");
+                conexao = new MySqlConnection("server=localhost;port=3306;uid=root;pwd=etecjau");
 
                 conexao.Open();
 
@@ -91,7 +91,17 @@ namespace Aplicativo_NET_Framawork_13
 
                 comando.ExecuteNonQuery();
 
+                // Criando a tabela Categoria.
+
                 comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Categoria" +
+                                           "(id integer auto_increment primary key," +
+                                           "nome varchar(30))", conexao);
+
+                comando.ExecuteNonQuery();
+
+                // Criando a tabela Marca.
+
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Marca" +
                                            "(id integer auto_increment primary key," +
                                            "nome varchar(30))", conexao);
 
