@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grp_buscar_cidades = new System.Windows.Forms.GroupBox();
+            this.grp_buscar_alterar_clientes = new System.Windows.Forms.GroupBox();
             this.txt_pesquisar_nome = new System.Windows.Forms.TextBox();
             this.lbl_pesquisar_nome = new System.Windows.Forms.Label();
-            this.txt_pesquisar_unidade_federal = new System.Windows.Forms.TextBox();
-            this.lbl_pesquisar_unidade_federal = new System.Windows.Forms.Label();
+            this.txt_pesquisar_cpf = new System.Windows.Forms.TextBox();
+            this.lbl_pesquisar_cpf = new System.Windows.Forms.Label();
             this.dgv_registros = new System.Windows.Forms.DataGridView();
             this.txt_pesquisar_id = new System.Windows.Forms.TextBox();
             this.lbl_pesquisar_id = new System.Windows.Forms.Label();
@@ -53,27 +53,27 @@
             this.lbl_telefone_cliente = new System.Windows.Forms.Label();
             this.dtpicker_data_nascimento_cliente = new System.Windows.Forms.DateTimePicker();
             this.lbl_data_nascimento_cliente = new System.Windows.Forms.Label();
-            this.grp_buscar_cidades.SuspendLayout();
+            this.grp_buscar_alterar_clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).BeginInit();
             this.SuspendLayout();
             // 
-            // grp_buscar_cidades
+            // grp_buscar_alterar_clientes
             // 
-            this.grp_buscar_cidades.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grp_buscar_cidades.Controls.Add(this.txt_pesquisar_nome);
-            this.grp_buscar_cidades.Controls.Add(this.lbl_pesquisar_nome);
-            this.grp_buscar_cidades.Controls.Add(this.txt_pesquisar_unidade_federal);
-            this.grp_buscar_cidades.Controls.Add(this.lbl_pesquisar_unidade_federal);
-            this.grp_buscar_cidades.Controls.Add(this.dgv_registros);
-            this.grp_buscar_cidades.Controls.Add(this.txt_pesquisar_id);
-            this.grp_buscar_cidades.Controls.Add(this.lbl_pesquisar_id);
-            this.grp_buscar_cidades.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grp_buscar_cidades.Location = new System.Drawing.Point(8, 241);
-            this.grp_buscar_cidades.Name = "grp_buscar_cidades";
-            this.grp_buscar_cidades.Size = new System.Drawing.Size(785, 261);
-            this.grp_buscar_cidades.TabIndex = 35;
-            this.grp_buscar_cidades.TabStop = false;
-            this.grp_buscar_cidades.Text = "Pesquisar:";
+            this.grp_buscar_alterar_clientes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grp_buscar_alterar_clientes.Controls.Add(this.txt_pesquisar_nome);
+            this.grp_buscar_alterar_clientes.Controls.Add(this.lbl_pesquisar_nome);
+            this.grp_buscar_alterar_clientes.Controls.Add(this.txt_pesquisar_cpf);
+            this.grp_buscar_alterar_clientes.Controls.Add(this.lbl_pesquisar_cpf);
+            this.grp_buscar_alterar_clientes.Controls.Add(this.dgv_registros);
+            this.grp_buscar_alterar_clientes.Controls.Add(this.txt_pesquisar_id);
+            this.grp_buscar_alterar_clientes.Controls.Add(this.lbl_pesquisar_id);
+            this.grp_buscar_alterar_clientes.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grp_buscar_alterar_clientes.Location = new System.Drawing.Point(8, 241);
+            this.grp_buscar_alterar_clientes.Name = "grp_buscar_alterar_clientes";
+            this.grp_buscar_alterar_clientes.Size = new System.Drawing.Size(785, 261);
+            this.grp_buscar_alterar_clientes.TabIndex = 35;
+            this.grp_buscar_alterar_clientes.TabStop = false;
+            this.grp_buscar_alterar_clientes.Text = "Alterar / Pesquisar:";
             // 
             // txt_pesquisar_nome
             // 
@@ -93,24 +93,24 @@
             this.lbl_pesquisar_nome.TabIndex = 8;
             this.lbl_pesquisar_nome.Text = "Nome:";
             // 
-            // txt_pesquisar_unidade_federal
+            // txt_pesquisar_cpf
             // 
-            this.txt_pesquisar_unidade_federal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pesquisar_unidade_federal.Location = new System.Drawing.Point(27, 208);
-            this.txt_pesquisar_unidade_federal.MaxLength = 2;
-            this.txt_pesquisar_unidade_federal.Name = "txt_pesquisar_unidade_federal";
-            this.txt_pesquisar_unidade_federal.Size = new System.Drawing.Size(100, 26);
-            this.txt_pesquisar_unidade_federal.TabIndex = 7;
+            this.txt_pesquisar_cpf.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_pesquisar_cpf.Location = new System.Drawing.Point(27, 208);
+            this.txt_pesquisar_cpf.MaxLength = 2;
+            this.txt_pesquisar_cpf.Name = "txt_pesquisar_cpf";
+            this.txt_pesquisar_cpf.Size = new System.Drawing.Size(100, 26);
+            this.txt_pesquisar_cpf.TabIndex = 7;
             // 
-            // lbl_pesquisar_unidade_federal
+            // lbl_pesquisar_cpf
             // 
-            this.lbl_pesquisar_unidade_federal.AutoSize = true;
-            this.lbl_pesquisar_unidade_federal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pesquisar_unidade_federal.Location = new System.Drawing.Point(23, 186);
-            this.lbl_pesquisar_unidade_federal.Name = "lbl_pesquisar_unidade_federal";
-            this.lbl_pesquisar_unidade_federal.Size = new System.Drawing.Size(102, 19);
-            this.lbl_pesquisar_unidade_federal.TabIndex = 6;
-            this.lbl_pesquisar_unidade_federal.Text = "Un. Federal:";
+            this.lbl_pesquisar_cpf.AutoSize = true;
+            this.lbl_pesquisar_cpf.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_pesquisar_cpf.Location = new System.Drawing.Point(23, 186);
+            this.lbl_pesquisar_cpf.Name = "lbl_pesquisar_cpf";
+            this.lbl_pesquisar_cpf.Size = new System.Drawing.Size(50, 19);
+            this.lbl_pesquisar_cpf.TabIndex = 6;
+            this.lbl_pesquisar_cpf.Text = "C.P.F.";
             // 
             // dgv_registros
             // 
@@ -155,6 +155,7 @@
             this.btn_fechar.TabIndex = 34;
             this.btn_fechar.Text = "Fechar";
             this.btn_fechar.UseVisualStyleBackColor = false;
+            this.btn_fechar.Click += new System.EventHandler(this.btn_fechar_Click);
             // 
             // btn_excluir
             // 
@@ -168,6 +169,7 @@
             this.btn_excluir.TabIndex = 33;
             this.btn_excluir.Text = "Excluir";
             this.btn_excluir.UseVisualStyleBackColor = false;
+            this.btn_excluir.Click += new System.EventHandler(this.btn_excluir_Click);
             // 
             // btn_cancelar
             // 
@@ -181,6 +183,7 @@
             this.btn_cancelar.TabIndex = 32;
             this.btn_cancelar.Text = "Cancelar";
             this.btn_cancelar.UseVisualStyleBackColor = false;
+            this.btn_cancelar.Click += new System.EventHandler(this.btn_cancelar_Click);
             // 
             // btn_alterar
             // 
@@ -194,6 +197,7 @@
             this.btn_alterar.TabIndex = 31;
             this.btn_alterar.Text = "Alterar";
             this.btn_alterar.UseVisualStyleBackColor = false;
+            this.btn_alterar.Click += new System.EventHandler(this.btn_alterar_Click);
             // 
             // btn_incluir
             // 
@@ -315,8 +319,10 @@
             // 
             // dtpicker_data_nascimento_cliente
             // 
+            this.dtpicker_data_nascimento_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.dtpicker_data_nascimento_cliente.CalendarFont = new System.Drawing.Font("Arial", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpicker_data_nascimento_cliente.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpicker_data_nascimento_cliente.CustomFormat = "dd/MM/yyyy  HH:mm:ss";
+            this.dtpicker_data_nascimento_cliente.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpicker_data_nascimento_cliente.Location = new System.Drawing.Point(342, 109);
             this.dtpicker_data_nascimento_cliente.Name = "dtpicker_data_nascimento_cliente";
             this.dtpicker_data_nascimento_cliente.Size = new System.Drawing.Size(451, 20);
@@ -338,13 +344,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 514);
+            this.ControlBox = false;
             this.Controls.Add(this.lbl_data_nascimento_cliente);
             this.Controls.Add(this.dtpicker_data_nascimento_cliente);
             this.Controls.Add(this.txt_telefone_cliente);
             this.Controls.Add(this.lbl_telefone_cliente);
             this.Controls.Add(this.txt_email_cliente);
             this.Controls.Add(this.lbl_email_cliente);
-            this.Controls.Add(this.grp_buscar_cidades);
+            this.Controls.Add(this.grp_buscar_alterar_clientes);
             this.Controls.Add(this.btn_fechar);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.btn_cancelar);
@@ -357,9 +364,12 @@
             this.Controls.Add(this.lbl_nome_cliente);
             this.Controls.Add(this.lbl_codigo_cliente);
             this.Name = "FrmCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "FrmCliente";
-            this.grp_buscar_cidades.ResumeLayout(false);
-            this.grp_buscar_cidades.PerformLayout();
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+            this.Load += new System.EventHandler(this.FrmCliente_Load);
+            this.grp_buscar_alterar_clientes.ResumeLayout(false);
+            this.grp_buscar_alterar_clientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -368,11 +378,11 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grp_buscar_cidades;
+        private System.Windows.Forms.GroupBox grp_buscar_alterar_clientes;
         private System.Windows.Forms.TextBox txt_pesquisar_nome;
         private System.Windows.Forms.Label lbl_pesquisar_nome;
-        private System.Windows.Forms.TextBox txt_pesquisar_unidade_federal;
-        private System.Windows.Forms.Label lbl_pesquisar_unidade_federal;
+        private System.Windows.Forms.TextBox txt_pesquisar_cpf;
+        private System.Windows.Forms.Label lbl_pesquisar_cpf;
         private System.Windows.Forms.DataGridView dgv_registros;
         private System.Windows.Forms.TextBox txt_pesquisar_id;
         private System.Windows.Forms.Label lbl_pesquisar_id;

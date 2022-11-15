@@ -21,28 +21,54 @@ namespace Aplicativo_NET_Framawork_13.View
 
             InitializeComponent();
 
-            dtpicker_data_nascimento_cliente.MaxDate = DateTime.Today;
+            /*dtpicker_data_nascimento_cliente.CustomFormat = "dd/MM/yyyy HH:mm:ss";
 
-            dtpicker_data_nascimento_cliente.MinDate = new DateTime(1950, 01, 01);
+            dtpicker_data_nascimento_cliente.Format = DateTimePickerFormat.Custom;*/
 
-            /*Database.Abrir_Conexao();
+        }
 
-            Database.comando = new MySqlCommand("DELIMITER //" +
-                                                "CREATE TRIGGER tgr_formatar_data AFTER INSERT " +
-                                                "ON Cliente FOR EACH ROW" +
-                                                "BEGIN" +
-                                                "UPDATE ALL Cliente SET data_nascimento = " +
-                                                "DATE_FORMAT(data_nascimento, ('%Y/%M/%d')" +
-                                                "WHERE data_nascimento = OLD.data_nascimento;" +
-                                                "END; //", Database.conexao);
+        private void FrmCliente_Load(object sender, EventArgs e)
+        {
 
-            Database.comando.ExecuteNonQuery();
 
-            Database.Fechar_Conexao();*/
+
+        }
+
+        private void btn_fechar_Click(object sender, EventArgs e)
+        {
+
+            if (MessageBox.Show("O formulário será fechado.", "Aviso!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+               == DialogResult.OK)
+            {
+
+                this.Close();
+
+            }
 
         }
 
         private void btn_incluir_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void btn_alterar_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void btn_cancelar_Click(object sender, EventArgs e)
+        {
+
+
+
+        }
+
+        private void btn_excluir_Click(object sender, EventArgs e)
         {
 
 

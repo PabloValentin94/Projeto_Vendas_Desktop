@@ -107,7 +107,6 @@ namespace Aplicativo_NET_Framawork_13
 
                 comando.ExecuteNonQuery();
 
-                /*
                 // Criando a tabela Cliente.
 
                 comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Cliente" +
@@ -119,7 +118,6 @@ namespace Aplicativo_NET_Framawork_13
                                            "data_nascimento date)", conexao);
 
                 comando.ExecuteNonQuery();
-                */
 
                 // Fechando a conexão com o MySQL.
 

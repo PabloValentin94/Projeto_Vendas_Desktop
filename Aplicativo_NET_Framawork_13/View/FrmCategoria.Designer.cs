@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grp_buscar_alterar_cidades = new System.Windows.Forms.GroupBox();
+            this.grp_buscar_alterar_categorias = new System.Windows.Forms.GroupBox();
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.txt_pesquisar_nome = new System.Windows.Forms.TextBox();
             this.lbl_pesquisar_nome = new System.Windows.Forms.Label();
@@ -44,26 +44,26 @@
             this.txt_codigo_categoria = new System.Windows.Forms.TextBox();
             this.lbl_nome_categoria = new System.Windows.Forms.Label();
             this.lbl_codigo_categoria = new System.Windows.Forms.Label();
-            this.grp_buscar_alterar_cidades.SuspendLayout();
+            this.grp_buscar_alterar_categorias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).BeginInit();
             this.SuspendLayout();
             // 
-            // grp_buscar_alterar_cidades
+            // grp_buscar_alterar_categorias
             // 
-            this.grp_buscar_alterar_cidades.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grp_buscar_alterar_cidades.Controls.Add(this.btn_pesquisar);
-            this.grp_buscar_alterar_cidades.Controls.Add(this.txt_pesquisar_nome);
-            this.grp_buscar_alterar_cidades.Controls.Add(this.lbl_pesquisar_nome);
-            this.grp_buscar_alterar_cidades.Controls.Add(this.dgv_registros);
-            this.grp_buscar_alterar_cidades.Controls.Add(this.txt_pesquisar_id);
-            this.grp_buscar_alterar_cidades.Controls.Add(this.lbl_pesquisar_id);
-            this.grp_buscar_alterar_cidades.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grp_buscar_alterar_cidades.Location = new System.Drawing.Point(10, 172);
-            this.grp_buscar_alterar_cidades.Name = "grp_buscar_alterar_cidades";
-            this.grp_buscar_alterar_cidades.Size = new System.Drawing.Size(785, 261);
-            this.grp_buscar_alterar_cidades.TabIndex = 35;
-            this.grp_buscar_alterar_cidades.TabStop = false;
-            this.grp_buscar_alterar_cidades.Text = "Alterar / Pesquisar:";
+            this.grp_buscar_alterar_categorias.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grp_buscar_alterar_categorias.Controls.Add(this.btn_pesquisar);
+            this.grp_buscar_alterar_categorias.Controls.Add(this.txt_pesquisar_nome);
+            this.grp_buscar_alterar_categorias.Controls.Add(this.lbl_pesquisar_nome);
+            this.grp_buscar_alterar_categorias.Controls.Add(this.dgv_registros);
+            this.grp_buscar_alterar_categorias.Controls.Add(this.txt_pesquisar_id);
+            this.grp_buscar_alterar_categorias.Controls.Add(this.lbl_pesquisar_id);
+            this.grp_buscar_alterar_categorias.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grp_buscar_alterar_categorias.Location = new System.Drawing.Point(10, 172);
+            this.grp_buscar_alterar_categorias.Name = "grp_buscar_alterar_categorias";
+            this.grp_buscar_alterar_categorias.Size = new System.Drawing.Size(785, 261);
+            this.grp_buscar_alterar_categorias.TabIndex = 35;
+            this.grp_buscar_alterar_categorias.TabStop = false;
+            this.grp_buscar_alterar_categorias.Text = "Alterar / Pesquisar:";
             // 
             // btn_pesquisar
             // 
@@ -245,7 +245,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.ControlBox = false;
-            this.Controls.Add(this.grp_buscar_alterar_cidades);
+            this.Controls.Add(this.grp_buscar_alterar_categorias);
             this.Controls.Add(this.btn_fechar);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.btn_cancelar);
@@ -260,8 +260,8 @@
             this.Text = "FrmCategoria";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmCategoria_Load);
-            this.grp_buscar_alterar_cidades.ResumeLayout(false);
-            this.grp_buscar_alterar_cidades.PerformLayout();
+            this.grp_buscar_alterar_categorias.ResumeLayout(false);
+            this.grp_buscar_alterar_categorias.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -270,7 +270,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grp_buscar_alterar_cidades;
+        private System.Windows.Forms.GroupBox grp_buscar_alterar_categorias;
         private System.Windows.Forms.Button btn_pesquisar;
         private System.Windows.Forms.DataGridView dgv_registros;
         private System.Windows.Forms.TextBox txt_pesquisar_id;
