@@ -30,7 +30,7 @@ namespace Aplicativo_NET_Framawork_13
 
                 // Criando uma conexão com o MySQL e abrindo-a.
 
-                conexao = new MySqlConnection("server=localhost;port=3306;uid=root;pwd=etecjau");
+                conexao = new MySqlConnection("server=localhost;port=3307;uid=root;pwd=etecjau");
 
                 conexao.Open();
 

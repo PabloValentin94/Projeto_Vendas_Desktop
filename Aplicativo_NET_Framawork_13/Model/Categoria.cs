@@ -142,8 +142,8 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.Abrir_Conexao();
 
-                Database.comando = new MySqlCommand("SELECT * FROM Categoria WHERE nome LIKE @nome" +
-                                                    "Order By nome ASC", Database.conexao);
+                Database.comando = new MySqlCommand("SELECT * FROM Categoria WHERE nome LIKE @nome " +
+                                                    "ORDER BY nome ASC", Database.conexao);
 
                 Database.comando.Parameters.AddWithValue("@nome", "%" + this.nome + "%");
 

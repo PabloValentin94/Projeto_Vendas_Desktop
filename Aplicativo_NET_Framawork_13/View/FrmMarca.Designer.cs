@@ -76,6 +76,7 @@
             this.btn_pesquisar.TabIndex = 10;
             this.btn_pesquisar.Text = "Pesquisar";
             this.btn_pesquisar.UseVisualStyleBackColor = false;
+            this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
             // 
             // txt_pesquisar_nome
             // 
@@ -107,6 +108,7 @@
             this.dgv_registros.Size = new System.Drawing.Size(600, 218);
             this.dgv_registros.TabIndex = 5;
             this.dgv_registros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_registros_CellDoubleClick);
+            this.dgv_registros.Click += new System.EventHandler(this.dgv_registros_Click);
             // 
             // txt_pesquisar_id
             // 

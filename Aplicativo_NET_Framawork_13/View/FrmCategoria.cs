@@ -374,6 +374,43 @@ namespace Aplicativo_NET_Framawork_13.View
 
         }
 
+        private void dgv_registros_Click(object sender, EventArgs e)
+        {
+
+            if (btn_pesquisar.Enabled == false)
+            {
+
+                MessageBox.Show("Digite no campo Nome e então clique em pesquisar para encontrar um determinado registro.",
+                                "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+            txt_pesquisar_nome.Enabled = true;
+
+            btn_pesquisar.Enabled = true;
+
+        }
+
+        private void btn_pesquisar_Click(object sender, EventArgs e)
+        {
+
+            Model.Categoria categoria = new Model.Categoria()
+            {
+
+                nome = txt_pesquisar_nome.Text
+
+            };
+
+            categoria.SelectByName();
+
+            dgv_registros.DataSource = Database.tabela_de_dados;
+
+            limpar_campos();
+
+            desabilitar_elementos();
+
+        }
+
     }
 
 }

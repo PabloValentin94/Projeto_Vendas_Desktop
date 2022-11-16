@@ -70,7 +70,6 @@
             this.grp_buscar_alterar_cidades.TabIndex = 23;
             this.grp_buscar_alterar_cidades.TabStop = false;
             this.grp_buscar_alterar_cidades.Text = "Alterar / Pesquisar:";
-            this.grp_buscar_alterar_cidades.Enter += new System.EventHandler(this.grp_buscar_cidades_Enter);
             // 
             // btn_pesquisar
             // 
@@ -235,7 +234,6 @@
             this.txt_uf_cidade.Name = "txt_uf_cidade";
             this.txt_uf_cidade.Size = new System.Drawing.Size(109, 26);
             this.txt_uf_cidade.TabIndex = 17;
-            this.txt_uf_cidade.TextChanged += new System.EventHandler(this.txt_uf_cidade_TextChanged);
             // 
             // lbl_uf_cidade
             // 
@@ -247,7 +245,6 @@
             this.lbl_uf_cidade.Size = new System.Drawing.Size(37, 19);
             this.lbl_uf_cidade.TabIndex = 16;
             this.lbl_uf_cidade.Text = "U.F.";
-            this.lbl_uf_cidade.Click += new System.EventHandler(this.lbl_uf_cidade_Click);
             // 
             // txt_nome_cidade
             // 
@@ -257,7 +254,6 @@
             this.txt_nome_cidade.Name = "txt_nome_cidade";
             this.txt_nome_cidade.Size = new System.Drawing.Size(527, 26);
             this.txt_nome_cidade.TabIndex = 15;
-            this.txt_nome_cidade.TextChanged += new System.EventHandler(this.txt_nome_cidade_TextChanged);
             // 
             // txt_codigo_cidade
             // 
@@ -269,7 +265,6 @@
             this.txt_codigo_cidade.Size = new System.Drawing.Size(100, 26);
             this.txt_codigo_cidade.TabIndex = 14;
             this.txt_codigo_cidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txt_codigo_cidade.TextChanged += new System.EventHandler(this.txt_codigo_cidade_TextChanged);
             // 
             // lbl_nome_cidade
             // 
@@ -281,7 +276,6 @@
             this.lbl_nome_cidade.Size = new System.Drawing.Size(69, 19);
             this.lbl_nome_cidade.TabIndex = 13;
             this.lbl_nome_cidade.Text = "Cidade:";
-            this.lbl_nome_cidade.Click += new System.EventHandler(this.lbl_nome_cidade_Click);
             // 
             // lbl_codigo_cidade
             // 
@@ -293,7 +287,6 @@
             this.lbl_codigo_cidade.Size = new System.Drawing.Size(71, 19);
             this.lbl_codigo_cidade.TabIndex = 12;
             this.lbl_codigo_cidade.Text = "Código:";
-            this.lbl_codigo_cidade.Click += new System.EventHandler(this.lbl_codigo_cidade_Click);
             // 
             // FrmCidade
             // 

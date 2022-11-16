@@ -325,18 +325,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
             cidade.Select();
 
-            dgv_registros.DataSource = Database.tabela_de_dados;
-
-        }
-
-        void busca_personalizada(string nome = null)
-        {
-
-            Model.Cidade cidade = new Model.Cidade();
-
-            cidade.SelectByName();
-
-            dgv_registros.DataSource = Database.tabela_de_dados;
+            dgv_registros.DataSource = Database.tabela_de_dados ;
 
         }
 
@@ -478,46 +467,21 @@ namespace Aplicativo_NET_Framawork_13.View
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
 
+            Model.Cidade cidade = new Model.Cidade()
+            {
+
+                nome = txt_pesquisar_nome.Text
+
+            };
+
+            cidade.SelectByName();
+
+            dgv_registros.DataSource = Database.tabela_de_dados;
+
             txt_pesquisar_nome.Clear();
 
-            busca_personalizada(txt_pesquisar_nome.Text);
-
         }
 
-        private void grp_buscar_cidades_Enter(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_uf_cidade_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_uf_cidade_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_nome_cidade_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txt_codigo_cidade_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_nome_cidade_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void lbl_codigo_cidade_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 
 }
