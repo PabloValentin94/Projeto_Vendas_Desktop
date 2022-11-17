@@ -140,7 +140,8 @@ namespace Aplicativo_NET_Framawork_13.Model
             try
             {
                 
-                Database.comando = new MySqlCommand("SELECT * FROM Marca WHERE nome LIKE @nome", Database.conexao);
+                Database.comando = new MySqlCommand("SELECT * FROM Marca WHERE nome LIKE @nome " +
+                                                    "ORDER BY nome ASC", Database.conexao);
 
                 Database.comando.Parameters.AddWithValue("@nome", this.nome + "%");
 

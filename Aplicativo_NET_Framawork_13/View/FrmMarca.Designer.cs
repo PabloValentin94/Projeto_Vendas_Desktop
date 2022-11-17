@@ -259,7 +259,7 @@
             this.Controls.Add(this.lbl_codigo_marca);
             this.Name = "FrmMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmMarca";
+            this.Text = "Cadastro de Marcas";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmMarca_Load);
             this.grp_buscar_alterar_marcas.ResumeLayout(false);

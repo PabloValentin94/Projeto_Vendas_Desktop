@@ -44,6 +44,7 @@
             this.txt_codigo_categoria = new System.Windows.Forms.TextBox();
             this.lbl_nome_categoria = new System.Windows.Forms.Label();
             this.lbl_codigo_categoria = new System.Windows.Forms.Label();
+            this.btn_resetar = new System.Windows.Forms.Button();
             this.grp_buscar_alterar_categorias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).BeginInit();
             this.SuspendLayout();
@@ -51,6 +52,7 @@
             // grp_buscar_alterar_categorias
             // 
             this.grp_buscar_alterar_categorias.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grp_buscar_alterar_categorias.Controls.Add(this.btn_resetar);
             this.grp_buscar_alterar_categorias.Controls.Add(this.btn_pesquisar);
             this.grp_buscar_alterar_categorias.Controls.Add(this.txt_pesquisar_nome);
             this.grp_buscar_alterar_categorias.Controls.Add(this.lbl_pesquisar_nome);
@@ -241,6 +243,19 @@
             this.lbl_codigo_categoria.TabIndex = 24;
             this.lbl_codigo_categoria.Text = "Código:";
             // 
+            // btn_resetar
+            // 
+            this.btn_resetar.BackColor = System.Drawing.Color.Magenta;
+            this.btn_resetar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_resetar.ForeColor = System.Drawing.Color.White;
+            this.btn_resetar.Location = new System.Drawing.Point(658, 57);
+            this.btn_resetar.Name = "btn_resetar";
+            this.btn_resetar.Size = new System.Drawing.Size(100, 31);
+            this.btn_resetar.TabIndex = 11;
+            this.btn_resetar.Text = "Resetar";
+            this.btn_resetar.UseVisualStyleBackColor = false;
+            this.btn_resetar.Click += new System.EventHandler(this.btn_resetar_Click);
+            // 
             // FrmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -259,7 +274,7 @@
             this.Controls.Add(this.lbl_codigo_categoria);
             this.Name = "FrmCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCategoria";
+            this.Text = "Cadastro de Categorias";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmCategoria_Load);
             this.grp_buscar_alterar_categorias.ResumeLayout(false);
@@ -288,5 +303,6 @@
         private System.Windows.Forms.Label lbl_codigo_categoria;
         private System.Windows.Forms.TextBox txt_pesquisar_nome;
         private System.Windows.Forms.Label lbl_pesquisar_nome;
+        private System.Windows.Forms.Button btn_resetar;
     }
 }

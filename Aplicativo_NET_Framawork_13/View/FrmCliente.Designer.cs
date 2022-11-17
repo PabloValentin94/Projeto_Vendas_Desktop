@@ -412,6 +412,7 @@
             // 
             // mtxt_cpf
             // 
+            this.mtxt_cpf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxt_cpf.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxt_cpf.Location = new System.Drawing.Point(7, 191);
             this.mtxt_cpf.Name = "mtxt_cpf";
@@ -451,7 +452,7 @@
             this.Controls.Add(this.lbl_codigo_cliente);
             this.Name = "FrmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "FrmCliente";
+            this.Text = "Cadastro de Clientes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             this.grp_buscar_alterar_clientes.ResumeLayout(false);

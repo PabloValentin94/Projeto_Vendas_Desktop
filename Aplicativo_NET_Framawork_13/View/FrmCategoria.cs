@@ -321,6 +321,8 @@ namespace Aplicativo_NET_Framawork_13.View
 
             btn_pesquisar.Enabled = false;
 
+            btn_resetar.Enabled = false;
+
             // Habilitando os elementos necessários:
 
             txt_nome_categoria.Enabled = true;
@@ -380,7 +382,8 @@ namespace Aplicativo_NET_Framawork_13.View
             if (btn_pesquisar.Enabled == false)
             {
 
-                MessageBox.Show("Digite no campo Nome e então clique em pesquisar para encontrar um determinado registro.",
+                MessageBox.Show("Digite no campo Nome e então clique em pesquisar para encontrar um determinado registro. " +
+                                "Caso a tabela não esteja mostrando todos os seus registros, clique em resetar antes de fazer a pesquisa.",
                                 "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
             }
@@ -389,25 +392,87 @@ namespace Aplicativo_NET_Framawork_13.View
 
             btn_pesquisar.Enabled = true;
 
+            btn_resetar.Enabled = true;
+
         }
 
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
 
-            Model.Categoria categoria = new Model.Categoria()
+            /* Essa condição garante que o usuário só irá fazer outra pesquisa, quando o DataGridView estiver resetado, ou seja, 
+             * quando todas as linhas estiverem visiveis. */
+
+            int total_linhas = linhas_totais();
+
+            if (dgv_registros.RowCount < total_linhas)
             {
 
-                nome = txt_pesquisar_nome.Text
+                MessageBox.Show("Clique no botão resetar antes de fazer outra pesquisa.",
+                                "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-            };
+            }
 
-            categoria.SelectByName();
+            else
+            {
 
-            dgv_registros.DataSource = Database.tabela_de_dados;
+                Model.Categoria categoria = new Model.Categoria()
+                {
 
-            limpar_campos();
+                    nome = txt_pesquisar_nome.Text
 
-            desabilitar_elementos();
+                };
+
+                categoria.SelectByName();
+
+                dgv_registros.DataSource = Database.tabela_de_dados;
+
+                limpar_campos();
+
+                desabilitar_elementos();
+
+            }
+
+        }
+
+        private void btn_resetar_Click(object sender, EventArgs e)
+        {
+
+            int total_linhas = linhas_totais();
+
+            if(dgv_registros.RowCount != total_linhas)
+            {
+
+                carregar_dgv();
+
+            }
+
+            else
+            {
+
+                MessageBox.Show("A tabela não precisa ser resetada. Prossiga com a pesquisa.",
+                                "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+        }
+
+        int linhas_totais()
+        {
+
+            Model.Categoria categoria = new Model.Categoria();
+
+            categoria.Select();
+
+            int qnt_linhas = 0;
+
+            foreach(DataRow rows in Database.tabela_de_dados.Rows)
+            {
+
+                qnt_linhas++;
+
+            }
+
+            return qnt_linhas;
 
         }
 
