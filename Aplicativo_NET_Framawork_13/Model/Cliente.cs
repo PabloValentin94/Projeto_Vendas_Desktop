@@ -36,6 +36,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
         public int fk_cidade { get; set; }
 
+        public string cidade { get; set; }
+
+        public string uf { get; set; }
+
         public void Incluir()
         {
 
@@ -46,9 +50,9 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.comando = new MySqlCommand("INSERT INTO " +
                                                     "Cliente(nome, email, cpf, telefone, data_nascimento, " +
-                                                    "renda, foto, venda, fk_cidade) " +
+                                                    "renda, foto, venda, fk_cidade, cidade, uf) " +
                                                     "VALUES(@nome, @email, @cpf, @telefone, @data_nascimento, " +
-                                                    "@renda, @foto, @venda, @fk_cidade)", Database.conexao);
+                                                    "@renda, @foto, @venda, @fk_cidade, @cidade, @uf)", Database.conexao);
 
                 Database.comando.Parameters.AddWithValue("@nome", this.nome);
 
@@ -67,6 +71,10 @@ namespace Aplicativo_NET_Framawork_13.Model
                 Database.comando.Parameters.AddWithValue("@venda", this.venda);
 
                 Database.comando.Parameters.AddWithValue("@fk_cidade", this.fk_cidade);
+
+                Database.comando.Parameters.AddWithValue("@cidade", this.cidade);
+
+                Database.comando.Parameters.AddWithValue("@uf", this.uf);
 
                 Database.comando.ExecuteNonQuery();
 

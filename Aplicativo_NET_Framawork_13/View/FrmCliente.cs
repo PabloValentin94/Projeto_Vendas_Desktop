@@ -131,7 +131,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
                     email = txt_email_cliente.Text,
 
-                    cpf = funcao_demascarar_cpf(mtxt_cpf.Text),
+                    cpf = funcao_desmascarar_cpf(mtxt_cpf.Text),
 
                     telefone = txt_telefone_cliente.Text,
 
@@ -144,6 +144,10 @@ namespace Aplicativo_NET_Framawork_13.View
                     venda = chbox_bloqueio_venda.Checked,
 
                     fk_cidade = (int)cb_cidade.SelectedValue,
+
+                    cidade = cb_cidade.Text,
+
+                    uf = txt_unidade_federal.Text
 
                 };
 
@@ -160,14 +164,74 @@ namespace Aplicativo_NET_Framawork_13.View
         private void btn_alterar_Click(object sender, EventArgs e)
         {
 
+            if(String.IsNullOrEmpty(txt_codigo_cliente.Text) || String.IsNullOrEmpty(txt_nome_cliente.Text)
+               || String.IsNullOrEmpty(txt_email_cliente.Text) || String.IsNullOrEmpty(mtxt_cpf.Text)
+               || String.IsNullOrEmpty(txt_telefone_cliente.Text) || String.IsNullOrEmpty(cb_cidade.Text)
+               || String.IsNullOrEmpty(txt_unidade_federal.Text) || String.IsNullOrEmpty(txt_renda.Text))
+            {
 
+                MessageBox.Show("Preencha todos os campos antes de prosseguir.",
+                                "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+            }
+
+            else
+            {
+
+                this.cliente = new Model.Cliente()
+                {
+
+                    id = int.Parse(txt_codigo_cliente.Text),
+
+                    nome = txt_nome_cliente.Text,
+
+                    email = txt_email_cliente.Text,
+
+                    cpf = funcao_desmascarar_cpf(mtxt_cpf.Text),
+
+                    telefone = txt_telefone_cliente.Text,
+
+                    data_nascimento = dttmpck_data_nascimento_cliente.Value,
+
+                    renda = double.Parse(txt_renda.Text),
+
+                    foto = pctbox_foto.ImageLocation,
+
+                    venda = chbox_bloqueio_venda.Checked,
+
+                    fk_cidade = (int)cb_cidade.SelectedValue,
+
+                    cidade = cb_cidade.Text,
+
+                    uf = txt_unidade_federal.Text
+
+                };
+
+                if (MessageBox.Show("Tem certeza de que deseja fazer alterações no registro " + txt_codigo_cliente.Text + "?",
+                                   "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    this.cliente.Alterar();
+
+                    limpar_campos();
+
+                    desabilitar_elementos();
+
+                    carregar_dgv();
+
+                    MessageBox.Show("Alteração efetuada com sucesso.", "Atenção!",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+
+            }
 
         }
 
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
 
-            if (String.IsNullOrEmpty(txt_codigo_cliente.Text) && String.IsNullOrEmpty(txt_nome_cliente.Text)
+            if(String.IsNullOrEmpty(txt_codigo_cliente.Text) && String.IsNullOrEmpty(txt_nome_cliente.Text)
                && String.IsNullOrEmpty(txt_email_cliente.Text) && String.IsNullOrEmpty(mtxt_cpf.Text)
                && String.IsNullOrEmpty(txt_telefone_cliente.Text) && String.IsNullOrEmpty(cb_cidade.Text)
                && String.IsNullOrEmpty(txt_unidade_federal.Text) && String.IsNullOrEmpty(txt_renda.Text)
@@ -275,7 +339,9 @@ namespace Aplicativo_NET_Framawork_13.View
         private void pctbox_foto_Click(object sender, EventArgs e)
         {
 
-            ofd_foto.InitialDirectory = "C:\\Users\\Evandro\\Downloads";
+            //ofd_foto.InitialDirectory = "C:\\Users\\Evandro\\Downloads";
+
+            ofd_foto.InitialDirectory = "D:\\";
 
             ofd_foto.FileName = "";
 
@@ -294,7 +360,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
         }
 
-        string funcao_demascarar_cpf(string cpf)
+        string funcao_desmascarar_cpf(string cpf)
         {
 
             string cpf_mascarado = cpf;
@@ -346,27 +412,31 @@ namespace Aplicativo_NET_Framawork_13.View
 
                 btn_excluir.Enabled = true;
 
-                // Desabilitando os elementos desnecessários:
-
-                txt_email_cliente.Enabled = false;
-
-                txt_telefone_cliente.Enabled = false;
-
-                cb_cidade.Enabled = false;
-
-                txt_unidade_federal.Enabled = false;
-
-                dttmpck_data_nascimento_cliente.Enabled = false;
-
-                txt_renda.Enabled = false;
-
                 btn_incluir.Enabled = false;
 
                 // Definido os valores das TextBoxes de pesquisa:
 
-                txt_codigo_cliente.Text = dgv_registros.CurrentRow.Cells[0].Value.ToString();
+                txt_codigo_cliente.Text = dgv_registros.CurrentRow.Cells["id"].Value.ToString();
 
-                txt_nome_cliente.Text = dgv_registros.CurrentRow.Cells[1].Value.ToString();
+                txt_nome_cliente.Text = dgv_registros.CurrentRow.Cells["nome"].Value.ToString();
+
+                txt_email_cliente.Text = dgv_registros.CurrentRow.Cells["email"].Value.ToString();
+
+                mtxt_cpf.Text = dgv_registros.CurrentRow.Cells["cpf"].Value.ToString();
+
+                txt_telefone_cliente.Text = dgv_registros.CurrentRow.Cells["telefone"].Value.ToString();
+
+                dttmpck_data_nascimento_cliente.Value = Convert.ToDateTime(dgv_registros.CurrentRow.Cells["data_nascimento"].Value);
+
+                txt_renda.Text = dgv_registros.CurrentRow.Cells["renda"].Value.ToString();
+
+                pctbox_foto.ImageLocation = dgv_registros.CurrentRow.Cells["foto"].Value.ToString();
+
+                chbox_bloqueio_venda.Checked = Convert.ToBoolean(dgv_registros.CurrentRow.Cells["venda"].Value);
+
+                cb_cidade.Text = dgv_registros.CurrentRow.Cells["cidade"].Value.ToString();
+
+                txt_unidade_federal.Text = dgv_registros.CurrentRow.Cells["uf"].Value.ToString();
 
             }
 
