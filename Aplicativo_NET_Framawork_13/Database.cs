@@ -115,7 +115,11 @@ namespace Aplicativo_NET_Framawork_13
                                            "cpf char(12)," +
                                            "telefone varchar(9)," +
                                            "email varchar(100)," +
-                                           "data_nascimento date)", conexao);
+                                           "data_nascimento date," +
+                                           "renda double," +
+                                           "venda bool," +
+                                           "foto varchar(100)," +
+                                           "fk_cidade integer)", conexao);
 
                 comando.ExecuteNonQuery();
 

@@ -28,6 +28,14 @@ namespace Aplicativo_NET_Framawork_13.Model
 
         public DateTime data_nascimento { get; set; }
 
+        public double renda { get; set; }
+
+        public string foto { get; set; }
+
+        public bool venda { get; set; }
+
+        public int fk_cidade { get; set; }
+
         public void Incluir()
         {
 
@@ -37,9 +45,10 @@ namespace Aplicativo_NET_Framawork_13.Model
                 Database.Abrir_Conexao();
 
                 Database.comando = new MySqlCommand("INSERT INTO " +
-                                                    "Cliente(nome, email, cpf, telefone, data_nascimento) " +
-                                                    "VALUES(@nome, @email, @cpf, @telefone, @data_nascimento)",
-                                                    Database.conexao);
+                                                    "Cliente(nome, email, cpf, telefone, data_nascimento, " +
+                                                    "renda, foto, venda, fk_cidade) " +
+                                                    "VALUES(@nome, @email, @cpf, @telefone, @data_nascimento, " +
+                                                    "@renda, @foto, @venda, @fk_cidade)", Database.conexao);
 
                 Database.comando.Parameters.AddWithValue("@nome", this.nome);
 
@@ -50,6 +59,14 @@ namespace Aplicativo_NET_Framawork_13.Model
                 Database.comando.Parameters.AddWithValue("@telefone", this.telefone);
 
                 Database.comando.Parameters.AddWithValue("@data_nascimento", this.data_nascimento);
+
+                Database.comando.Parameters.AddWithValue("@renda", this.renda);
+
+                Database.comando.Parameters.AddWithValue("@foto", this.foto);
+
+                Database.comando.Parameters.AddWithValue("@venda", this.venda);
+
+                Database.comando.Parameters.AddWithValue("@fk_cidade", this.fk_cidade);
 
                 Database.comando.ExecuteNonQuery();
 
@@ -76,10 +93,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.comando = new MySqlCommand("UPDATE Cliente SET nome = @nome, " +
                                                     "email = @email, cpf = @cpf, telefone = @telefone, " +
-                                                    "data_nascimento = @data_nascimento " +
+                                                    "data_nascimento = @data_nascimento, " +
+                                                    "renda = @renda, foto = @foto, venda = @venda, " +
+                                                    "fk_cidade = @fk_cidade" +
                                                     "WHERE id = @id", Database.conexao);
-
-                Database.comando.Parameters.AddWithValue("@id", this.id);
 
                 Database.comando.Parameters.AddWithValue("@nome", this.nome);
 
@@ -90,6 +107,16 @@ namespace Aplicativo_NET_Framawork_13.Model
                 Database.comando.Parameters.AddWithValue("@telefone", this.telefone);
 
                 Database.comando.Parameters.AddWithValue("@data_nascimento", this.data_nascimento);
+
+                Database.comando.Parameters.AddWithValue("@renda", this.renda);
+
+                Database.comando.Parameters.AddWithValue("@foto", this.foto);
+
+                Database.comando.Parameters.AddWithValue("@venda", this.venda);
+
+                Database.comando.Parameters.AddWithValue("@fk_cidade", this.fk_cidade);
+
+                Database.comando.Parameters.AddWithValue("@id", this.id);
 
                 Database.comando.ExecuteNonQuery();
 

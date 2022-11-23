@@ -29,13 +29,9 @@
         private void InitializeComponent()
         {
             this.grp_buscar_alterar_clientes = new System.Windows.Forms.GroupBox();
-            this.txt_pesquisar_nome = new System.Windows.Forms.TextBox();
-            this.lbl_pesquisar_nome = new System.Windows.Forms.Label();
-            this.txt_pesquisar_cpf = new System.Windows.Forms.TextBox();
-            this.lbl_pesquisar_cpf = new System.Windows.Forms.Label();
+            this.btn_resetar = new System.Windows.Forms.Button();
+            this.btn_pesquisar = new System.Windows.Forms.Button();
             this.dgv_registros = new System.Windows.Forms.DataGridView();
-            this.txt_pesquisar_id = new System.Windows.Forms.TextBox();
-            this.lbl_pesquisar_id = new System.Windows.Forms.Label();
             this.btn_fechar = new System.Windows.Forms.Button();
             this.btn_excluir = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
@@ -50,31 +46,30 @@
             this.lbl_email_cliente = new System.Windows.Forms.Label();
             this.txt_telefone_cliente = new System.Windows.Forms.TextBox();
             this.lbl_telefone_cliente = new System.Windows.Forms.Label();
-            this.dtpicker_data_nascimento_cliente = new System.Windows.Forms.DateTimePicker();
+            this.dttmpck_data_nascimento_cliente = new System.Windows.Forms.DateTimePicker();
             this.lbl_data_nascimento_cliente = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.txt_renda = new System.Windows.Forms.TextBox();
+            this.pctbox_foto = new System.Windows.Forms.PictureBox();
             this.lbl_renda = new System.Windows.Forms.Label();
             this.cb_cidade = new System.Windows.Forms.ComboBox();
             this.lbl_cidade = new System.Windows.Forms.Label();
             this.txt_unidade_federal = new System.Windows.Forms.TextBox();
             this.lbl_unidade_federal = new System.Windows.Forms.Label();
             this.mtxt_cpf = new System.Windows.Forms.MaskedTextBox();
+            this.ofd_foto = new System.Windows.Forms.OpenFileDialog();
+            this.chbox_bloqueio_venda = new System.Windows.Forms.CheckBox();
+            this.txt_renda = new System.Windows.Forms.TextBox();
+            this.lbl_real = new System.Windows.Forms.Label();
             this.grp_buscar_alterar_clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbox_foto)).BeginInit();
             this.SuspendLayout();
             // 
             // grp_buscar_alterar_clientes
             // 
             this.grp_buscar_alterar_clientes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grp_buscar_alterar_clientes.Controls.Add(this.txt_pesquisar_nome);
-            this.grp_buscar_alterar_clientes.Controls.Add(this.lbl_pesquisar_nome);
-            this.grp_buscar_alterar_clientes.Controls.Add(this.txt_pesquisar_cpf);
-            this.grp_buscar_alterar_clientes.Controls.Add(this.lbl_pesquisar_cpf);
+            this.grp_buscar_alterar_clientes.Controls.Add(this.btn_resetar);
+            this.grp_buscar_alterar_clientes.Controls.Add(this.btn_pesquisar);
             this.grp_buscar_alterar_clientes.Controls.Add(this.dgv_registros);
-            this.grp_buscar_alterar_clientes.Controls.Add(this.txt_pesquisar_id);
-            this.grp_buscar_alterar_clientes.Controls.Add(this.lbl_pesquisar_id);
             this.grp_buscar_alterar_clientes.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grp_buscar_alterar_clientes.Location = new System.Drawing.Point(7, 451);
             this.grp_buscar_alterar_clientes.Name = "grp_buscar_alterar_clientes";
@@ -83,42 +78,31 @@
             this.grp_buscar_alterar_clientes.TabStop = false;
             this.grp_buscar_alterar_clientes.Text = "Alterar / Pesquisar:";
             // 
-            // txt_pesquisar_nome
+            // btn_resetar
             // 
-            this.txt_pesquisar_nome.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pesquisar_nome.Location = new System.Drawing.Point(27, 124);
-            this.txt_pesquisar_nome.Name = "txt_pesquisar_nome";
-            this.txt_pesquisar_nome.Size = new System.Drawing.Size(100, 26);
-            this.txt_pesquisar_nome.TabIndex = 9;
+            this.btn_resetar.BackColor = System.Drawing.Color.Magenta;
+            this.btn_resetar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_resetar.ForeColor = System.Drawing.Color.White;
+            this.btn_resetar.Location = new System.Drawing.Point(549, 22);
+            this.btn_resetar.Name = "btn_resetar";
+            this.btn_resetar.Size = new System.Drawing.Size(104, 26);
+            this.btn_resetar.TabIndex = 52;
+            this.btn_resetar.Text = "Resetar";
+            this.btn_resetar.UseVisualStyleBackColor = false;
+            this.btn_resetar.Click += new System.EventHandler(this.btn_resetar_Click);
             // 
-            // lbl_pesquisar_nome
+            // btn_pesquisar
             // 
-            this.lbl_pesquisar_nome.AutoSize = true;
-            this.lbl_pesquisar_nome.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pesquisar_nome.Location = new System.Drawing.Point(23, 102);
-            this.lbl_pesquisar_nome.Name = "lbl_pesquisar_nome";
-            this.lbl_pesquisar_nome.Size = new System.Drawing.Size(60, 19);
-            this.lbl_pesquisar_nome.TabIndex = 8;
-            this.lbl_pesquisar_nome.Text = "Nome:";
-            // 
-            // txt_pesquisar_cpf
-            // 
-            this.txt_pesquisar_cpf.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pesquisar_cpf.Location = new System.Drawing.Point(27, 208);
-            this.txt_pesquisar_cpf.MaxLength = 2;
-            this.txt_pesquisar_cpf.Name = "txt_pesquisar_cpf";
-            this.txt_pesquisar_cpf.Size = new System.Drawing.Size(100, 26);
-            this.txt_pesquisar_cpf.TabIndex = 7;
-            // 
-            // lbl_pesquisar_cpf
-            // 
-            this.lbl_pesquisar_cpf.AutoSize = true;
-            this.lbl_pesquisar_cpf.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pesquisar_cpf.Location = new System.Drawing.Point(23, 186);
-            this.lbl_pesquisar_cpf.Name = "lbl_pesquisar_cpf";
-            this.lbl_pesquisar_cpf.Size = new System.Drawing.Size(50, 19);
-            this.lbl_pesquisar_cpf.TabIndex = 6;
-            this.lbl_pesquisar_cpf.Text = "C.P.F.";
+            this.btn_pesquisar.BackColor = System.Drawing.Color.Purple;
+            this.btn_pesquisar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_pesquisar.ForeColor = System.Drawing.Color.White;
+            this.btn_pesquisar.Location = new System.Drawing.Point(650, 22);
+            this.btn_pesquisar.Name = "btn_pesquisar";
+            this.btn_pesquisar.Size = new System.Drawing.Size(108, 26);
+            this.btn_pesquisar.TabIndex = 51;
+            this.btn_pesquisar.Text = "Pesquisar";
+            this.btn_pesquisar.UseVisualStyleBackColor = false;
+            this.btn_pesquisar.Click += new System.EventHandler(this.btn_pesquisar_Click);
             // 
             // dgv_registros
             // 
@@ -126,30 +110,13 @@
             this.dgv_registros.AllowUserToDeleteRows = false;
             this.dgv_registros.AllowUserToOrderColumns = true;
             this.dgv_registros.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgv_registros.Location = new System.Drawing.Point(158, 25);
+            this.dgv_registros.Location = new System.Drawing.Point(26, 48);
             this.dgv_registros.Name = "dgv_registros";
             this.dgv_registros.ReadOnly = true;
-            this.dgv_registros.Size = new System.Drawing.Size(600, 218);
+            this.dgv_registros.Size = new System.Drawing.Size(732, 201);
             this.dgv_registros.TabIndex = 5;
-            // 
-            // txt_pesquisar_id
-            // 
-            this.txt_pesquisar_id.Enabled = false;
-            this.txt_pesquisar_id.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_pesquisar_id.Location = new System.Drawing.Point(27, 48);
-            this.txt_pesquisar_id.Name = "txt_pesquisar_id";
-            this.txt_pesquisar_id.Size = new System.Drawing.Size(100, 26);
-            this.txt_pesquisar_id.TabIndex = 4;
-            // 
-            // lbl_pesquisar_id
-            // 
-            this.lbl_pesquisar_id.AutoSize = true;
-            this.lbl_pesquisar_id.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_pesquisar_id.Location = new System.Drawing.Point(23, 26);
-            this.lbl_pesquisar_id.Name = "lbl_pesquisar_id";
-            this.lbl_pesquisar_id.Size = new System.Drawing.Size(31, 19);
-            this.lbl_pesquisar_id.TabIndex = 3;
-            this.lbl_pesquisar_id.Text = "ID:";
+            this.dgv_registros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_registros_CellDoubleClick);
+            this.dgv_registros.Click += new System.EventHandler(this.dgv_registros_Click);
             // 
             // btn_fechar
             // 
@@ -280,7 +247,7 @@
             this.txt_email_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_email_cliente.Location = new System.Drawing.Point(8, 116);
             this.txt_email_cliente.Name = "txt_email_cliente";
-            this.txt_email_cliente.Size = new System.Drawing.Size(545, 26);
+            this.txt_email_cliente.Size = new System.Drawing.Size(383, 26);
             this.txt_email_cliente.TabIndex = 37;
             // 
             // lbl_email_cliente
@@ -299,7 +266,6 @@
             this.txt_telefone_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_telefone_cliente.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_telefone_cliente.Location = new System.Drawing.Point(236, 191);
-            this.txt_telefone_cliente.MaxLength = 2;
             this.txt_telefone_cliente.Name = "txt_telefone_cliente";
             this.txt_telefone_cliente.Size = new System.Drawing.Size(317, 26);
             this.txt_telefone_cliente.TabIndex = 39;
@@ -315,16 +281,16 @@
             this.lbl_telefone_cliente.TabIndex = 38;
             this.lbl_telefone_cliente.Text = "Telefone:";
             // 
-            // dtpicker_data_nascimento_cliente
+            // dttmpck_data_nascimento_cliente
             // 
-            this.dtpicker_data_nascimento_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.dtpicker_data_nascimento_cliente.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtpicker_data_nascimento_cliente.CustomFormat = "dd/MM/yyyy  HH:mm:ss";
-            this.dtpicker_data_nascimento_cliente.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.dtpicker_data_nascimento_cliente.Location = new System.Drawing.Point(7, 320);
-            this.dtpicker_data_nascimento_cliente.Name = "dtpicker_data_nascimento_cliente";
-            this.dtpicker_data_nascimento_cliente.Size = new System.Drawing.Size(546, 20);
-            this.dtpicker_data_nascimento_cliente.TabIndex = 40;
+            this.dttmpck_data_nascimento_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.dttmpck_data_nascimento_cliente.CalendarFont = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dttmpck_data_nascimento_cliente.CustomFormat = "dd/MM/yyyy  HH:mm:ss";
+            this.dttmpck_data_nascimento_cliente.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dttmpck_data_nascimento_cliente.Location = new System.Drawing.Point(7, 320);
+            this.dttmpck_data_nascimento_cliente.Name = "dttmpck_data_nascimento_cliente";
+            this.dttmpck_data_nascimento_cliente.Size = new System.Drawing.Size(546, 20);
+            this.dttmpck_data_nascimento_cliente.TabIndex = 40;
             // 
             // lbl_data_nascimento_cliente
             // 
@@ -337,25 +303,17 @@
             this.lbl_data_nascimento_cliente.TabIndex = 41;
             this.lbl_data_nascimento_cliente.Text = "Data de Nascimento:";
             // 
-            // pictureBox1
+            // pctbox_foto
             // 
-            this.pictureBox1.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pictureBox1.Location = new System.Drawing.Point(576, 20);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(212, 256);
-            this.pictureBox1.TabIndex = 42;
-            this.pictureBox1.TabStop = false;
-            // 
-            // txt_renda
-            // 
-            this.txt_renda.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.txt_renda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_renda.Location = new System.Drawing.Point(576, 314);
-            this.txt_renda.MaxLength = 2;
-            this.txt_renda.Name = "txt_renda";
-            this.txt_renda.Size = new System.Drawing.Size(212, 26);
-            this.txt_renda.TabIndex = 44;
+            this.pctbox_foto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pctbox_foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pctbox_foto.Location = new System.Drawing.Point(576, 20);
+            this.pctbox_foto.Name = "pctbox_foto";
+            this.pctbox_foto.Size = new System.Drawing.Size(212, 261);
+            this.pctbox_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctbox_foto.TabIndex = 42;
+            this.pctbox_foto.TabStop = false;
+            this.pctbox_foto.Click += new System.EventHandler(this.pctbox_foto_Click);
             // 
             // lbl_renda
             // 
@@ -377,6 +335,7 @@
             this.cb_cidade.Name = "cb_cidade";
             this.cb_cidade.Size = new System.Drawing.Size(310, 26);
             this.cb_cidade.TabIndex = 45;
+            this.cb_cidade.SelectedIndexChanged += new System.EventHandler(this.cb_cidade_SelectedIndexChanged);
             // 
             // lbl_cidade
             // 
@@ -392,6 +351,7 @@
             // txt_unidade_federal
             // 
             this.txt_unidade_federal.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_unidade_federal.Enabled = false;
             this.txt_unidade_federal.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txt_unidade_federal.Location = new System.Drawing.Point(323, 255);
             this.txt_unidade_federal.MaxLength = 2;
@@ -415,9 +375,43 @@
             this.mtxt_cpf.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.mtxt_cpf.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.mtxt_cpf.Location = new System.Drawing.Point(7, 191);
+            this.mtxt_cpf.Mask = "###,###,###-##";
             this.mtxt_cpf.Name = "mtxt_cpf";
             this.mtxt_cpf.Size = new System.Drawing.Size(223, 26);
             this.mtxt_cpf.TabIndex = 49;
+            // 
+            // chbox_bloqueio_venda
+            // 
+            this.chbox_bloqueio_venda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.chbox_bloqueio_venda.AutoSize = true;
+            this.chbox_bloqueio_venda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chbox_bloqueio_venda.Location = new System.Drawing.Point(414, 118);
+            this.chbox_bloqueio_venda.Name = "chbox_bloqueio_venda";
+            this.chbox_bloqueio_venda.Size = new System.Drawing.Size(139, 22);
+            this.chbox_bloqueio_venda.TabIndex = 50;
+            this.chbox_bloqueio_venda.Text = "Bloquear Venda";
+            this.chbox_bloqueio_venda.UseVisualStyleBackColor = true;
+            // 
+            // txt_renda
+            // 
+            this.txt_renda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_renda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_renda.Location = new System.Drawing.Point(605, 314);
+            this.txt_renda.Name = "txt_renda";
+            this.txt_renda.Size = new System.Drawing.Size(183, 26);
+            this.txt_renda.TabIndex = 51;
+            // 
+            // lbl_real
+            // 
+            this.lbl_real.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_real.AutoSize = true;
+            this.lbl_real.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_real.ForeColor = System.Drawing.Color.Goldenrod;
+            this.lbl_real.Location = new System.Drawing.Point(572, 317);
+            this.lbl_real.Name = "lbl_real";
+            this.lbl_real.Size = new System.Drawing.Size(30, 19);
+            this.lbl_real.TabIndex = 52;
+            this.lbl_real.Text = "R$";
             // 
             // FrmCliente
             // 
@@ -425,16 +419,18 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 722);
             this.ControlBox = false;
+            this.Controls.Add(this.lbl_real);
+            this.Controls.Add(this.txt_renda);
+            this.Controls.Add(this.chbox_bloqueio_venda);
             this.Controls.Add(this.mtxt_cpf);
             this.Controls.Add(this.txt_unidade_federal);
             this.Controls.Add(this.lbl_unidade_federal);
             this.Controls.Add(this.lbl_cidade);
             this.Controls.Add(this.cb_cidade);
-            this.Controls.Add(this.txt_renda);
             this.Controls.Add(this.lbl_renda);
-            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pctbox_foto);
             this.Controls.Add(this.lbl_data_nascimento_cliente);
-            this.Controls.Add(this.dtpicker_data_nascimento_cliente);
+            this.Controls.Add(this.dttmpck_data_nascimento_cliente);
             this.Controls.Add(this.txt_telefone_cliente);
             this.Controls.Add(this.lbl_telefone_cliente);
             this.Controls.Add(this.txt_email_cliente);
@@ -456,9 +452,8 @@
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmCliente_Load);
             this.grp_buscar_alterar_clientes.ResumeLayout(false);
-            this.grp_buscar_alterar_clientes.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbox_foto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -467,13 +462,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox grp_buscar_alterar_clientes;
-        private System.Windows.Forms.TextBox txt_pesquisar_nome;
-        private System.Windows.Forms.Label lbl_pesquisar_nome;
-        private System.Windows.Forms.TextBox txt_pesquisar_cpf;
-        private System.Windows.Forms.Label lbl_pesquisar_cpf;
         private System.Windows.Forms.DataGridView dgv_registros;
-        private System.Windows.Forms.TextBox txt_pesquisar_id;
-        private System.Windows.Forms.Label lbl_pesquisar_id;
         private System.Windows.Forms.Button btn_fechar;
         private System.Windows.Forms.Button btn_excluir;
         private System.Windows.Forms.Button btn_cancelar;
@@ -488,15 +477,20 @@
         private System.Windows.Forms.Label lbl_email_cliente;
         private System.Windows.Forms.TextBox txt_telefone_cliente;
         private System.Windows.Forms.Label lbl_telefone_cliente;
-        private System.Windows.Forms.DateTimePicker dtpicker_data_nascimento_cliente;
+        private System.Windows.Forms.DateTimePicker dttmpck_data_nascimento_cliente;
         private System.Windows.Forms.Label lbl_data_nascimento_cliente;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox txt_renda;
+        private System.Windows.Forms.PictureBox pctbox_foto;
         private System.Windows.Forms.Label lbl_renda;
         private System.Windows.Forms.ComboBox cb_cidade;
         private System.Windows.Forms.Label lbl_cidade;
         private System.Windows.Forms.TextBox txt_unidade_federal;
         private System.Windows.Forms.Label lbl_unidade_federal;
         private System.Windows.Forms.MaskedTextBox mtxt_cpf;
+        private System.Windows.Forms.OpenFileDialog ofd_foto;
+        private System.Windows.Forms.CheckBox chbox_bloqueio_venda;
+        private System.Windows.Forms.Button btn_pesquisar;
+        private System.Windows.Forms.Button btn_resetar;
+        private System.Windows.Forms.TextBox txt_renda;
+        private System.Windows.Forms.Label lbl_real;
     }
 }
