@@ -28,8 +28,6 @@ namespace Aplicativo_NET_Framawork_13.View
 
             desabilitar_elementos();
 
-            carregar_dgv();
-
             btn_alterar.Enabled = false;
 
             btn_excluir.Enabled = false;
@@ -63,7 +61,11 @@ namespace Aplicativo_NET_Framawork_13.View
 
             cb_cidade.DataSource = this.cidade.Select();
 
+            // Definindo o que é exibido na ComboBox.
+
             cb_cidade.DisplayMember = "nome";
+
+            // Definindo a propriedade da ComboBox que pode ser usada no contexto deste arquivo.
 
             cb_cidade.ValueMember = "id";
 
@@ -91,7 +93,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
             // Fazendo com que a imagem caiba dentro da PictureBox.
 
-            pctbox_foto.SizeMode = PictureBoxSizeMode.Zoom;
+            pctbox_foto_cliente.SizeMode = PictureBoxSizeMode.Zoom;
 
         }
 
@@ -139,7 +141,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
                     renda = double.Parse(txt_renda.Text),
 
-                    foto = pctbox_foto.ImageLocation,
+                    foto = pctbox_foto_cliente.ImageLocation,
 
                     venda = chbox_bloqueio_venda.Checked,
 
@@ -151,11 +153,22 @@ namespace Aplicativo_NET_Framawork_13.View
 
                 };
 
-                this.cliente.Incluir();
+                if (MessageBox.Show("Deseja mesmo confirmar a adição de um novo registro ao banco de dados?", "Atenção!",
+                                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
 
-                limpar_campos();
+                    this.cliente.Incluir();
 
-                carregar_dgv();
+                    limpar_campos();
+
+                    carregar_dgv();
+
+                    //gerar_id_codigo();
+
+                    MessageBox.Show("Inserção efetuada com sucesso.", "Atenção!",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
 
             }
 
@@ -164,65 +177,49 @@ namespace Aplicativo_NET_Framawork_13.View
         private void btn_alterar_Click(object sender, EventArgs e)
         {
 
-            if(String.IsNullOrEmpty(txt_codigo_cliente.Text) || String.IsNullOrEmpty(txt_nome_cliente.Text)
-               || String.IsNullOrEmpty(txt_email_cliente.Text) || String.IsNullOrEmpty(mtxt_cpf.Text)
-               || String.IsNullOrEmpty(txt_telefone_cliente.Text) || String.IsNullOrEmpty(cb_cidade.Text)
-               || String.IsNullOrEmpty(txt_unidade_federal.Text) || String.IsNullOrEmpty(txt_renda.Text))
+            this.cliente = new Model.Cliente()
             {
 
-                MessageBox.Show("Preencha todos os campos antes de prosseguir.",
-                                "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                id = int.Parse(txt_codigo_cliente.Text),
 
-            }
+                nome = txt_nome_cliente.Text,
 
-            else
+                email = txt_email_cliente.Text,
+
+                cpf = funcao_desmascarar_cpf(mtxt_cpf.Text),
+
+                telefone = txt_telefone_cliente.Text,
+
+                data_nascimento = dttmpck_data_nascimento_cliente.Value,
+
+                renda = double.Parse(txt_renda.Text),
+
+                foto = pctbox_foto_cliente.ImageLocation,
+
+                venda = chbox_bloqueio_venda.Checked,
+
+                fk_cidade = (int)cb_cidade.SelectedValue,
+
+                cidade = cb_cidade.Text,
+
+                uf = txt_unidade_federal.Text
+
+            };
+
+            if (MessageBox.Show("Tem certeza de que deseja fazer alterações no registro " + txt_codigo_cliente.Text + "?",
+                                "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
 
-                this.cliente = new Model.Cliente()
-                {
+                this.cliente.Alterar();
 
-                    id = int.Parse(txt_codigo_cliente.Text),
+                limpar_campos();
 
-                    nome = txt_nome_cliente.Text,
+                desabilitar_elementos();
 
-                    email = txt_email_cliente.Text,
+                carregar_dgv();
 
-                    cpf = funcao_desmascarar_cpf(mtxt_cpf.Text),
-
-                    telefone = txt_telefone_cliente.Text,
-
-                    data_nascimento = dttmpck_data_nascimento_cliente.Value,
-
-                    renda = double.Parse(txt_renda.Text),
-
-                    foto = pctbox_foto.ImageLocation,
-
-                    venda = chbox_bloqueio_venda.Checked,
-
-                    fk_cidade = (int)cb_cidade.SelectedValue,
-
-                    cidade = cb_cidade.Text,
-
-                    uf = txt_unidade_federal.Text
-
-                };
-
-                if (MessageBox.Show("Tem certeza de que deseja fazer alterações no registro " + txt_codigo_cliente.Text + "?",
-                                   "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-
-                    this.cliente.Alterar();
-
-                    limpar_campos();
-
-                    desabilitar_elementos();
-
-                    carregar_dgv();
-
-                    MessageBox.Show("Alteração efetuada com sucesso.", "Atenção!",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
+                MessageBox.Show("Alteração efetuada com sucesso.", "Atenção!",
+                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
             }
 
@@ -341,13 +338,13 @@ namespace Aplicativo_NET_Framawork_13.View
 
             //ofd_foto.InitialDirectory = "C:\\Users\\Evandro\\Downloads";
 
-            ofd_foto.InitialDirectory = "D:\\";
+            ofd_foto_cliente.InitialDirectory = "D:\\";
 
-            ofd_foto.FileName = "";
+            ofd_foto_cliente.FileName = "";
 
-            ofd_foto.ShowDialog();
+            ofd_foto_cliente.ShowDialog();
 
-            pctbox_foto.ImageLocation = ofd_foto.FileName;
+            pctbox_foto_cliente.ImageLocation = ofd_foto_cliente.FileName;
 
         }
 
@@ -394,8 +391,8 @@ namespace Aplicativo_NET_Framawork_13.View
 
                     string texto = "Opções disponíveis:\n\n" +
                                    "Alterar: caso deseje alterar um registro já existente, preencha " +
-                                   "o campo Nome Completo com a nova " +
-                                   "informação. O campo Código serve somente para referenciar o registro " +
+                                   "os campos com suas novas " +
+                                   "informações. O campo Código serve somente para referenciar o registro " +
                                    "que foi clicado duas vezes.\n\n" +
                                    "Deletar: nesse caso, apenas de um duplo clique no registro " +
                                    "que deseja apagar.";
@@ -430,7 +427,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
                 txt_renda.Text = dgv_registros.CurrentRow.Cells["renda"].Value.ToString();
 
-                pctbox_foto.ImageLocation = dgv_registros.CurrentRow.Cells["foto"].Value.ToString();
+                pctbox_foto_cliente.ImageLocation = dgv_registros.CurrentRow.Cells["foto"].Value.ToString();
 
                 chbox_bloqueio_venda.Checked = Convert.ToBoolean(dgv_registros.CurrentRow.Cells["venda"].Value);
 

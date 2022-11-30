@@ -65,6 +65,15 @@ namespace Aplicativo_NET_Framawork_13
 
         }
 
+        private void produtosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            FrmProduto form = new FrmProduto();
+
+            form.Show();
+
+        }
+
     }
 
 }

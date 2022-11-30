@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.grp_buscar_alterar_clientes = new System.Windows.Forms.GroupBox();
+            this.grp_buscar_clientes = new System.Windows.Forms.GroupBox();
             this.btn_resetar = new System.Windows.Forms.Button();
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.dgv_registros = new System.Windows.Forms.DataGridView();
@@ -48,35 +48,35 @@
             this.lbl_telefone_cliente = new System.Windows.Forms.Label();
             this.dttmpck_data_nascimento_cliente = new System.Windows.Forms.DateTimePicker();
             this.lbl_data_nascimento_cliente = new System.Windows.Forms.Label();
-            this.pctbox_foto = new System.Windows.Forms.PictureBox();
+            this.pctbox_foto_cliente = new System.Windows.Forms.PictureBox();
             this.lbl_renda = new System.Windows.Forms.Label();
             this.cb_cidade = new System.Windows.Forms.ComboBox();
             this.lbl_cidade = new System.Windows.Forms.Label();
             this.txt_unidade_federal = new System.Windows.Forms.TextBox();
             this.lbl_unidade_federal = new System.Windows.Forms.Label();
             this.mtxt_cpf = new System.Windows.Forms.MaskedTextBox();
-            this.ofd_foto = new System.Windows.Forms.OpenFileDialog();
+            this.ofd_foto_cliente = new System.Windows.Forms.OpenFileDialog();
             this.chbox_bloqueio_venda = new System.Windows.Forms.CheckBox();
             this.txt_renda = new System.Windows.Forms.TextBox();
             this.lbl_real = new System.Windows.Forms.Label();
-            this.grp_buscar_alterar_clientes.SuspendLayout();
+            this.grp_buscar_clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbox_foto)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbox_foto_cliente)).BeginInit();
             this.SuspendLayout();
             // 
-            // grp_buscar_alterar_clientes
+            // grp_buscar_clientes
             // 
-            this.grp_buscar_alterar_clientes.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.grp_buscar_alterar_clientes.Controls.Add(this.btn_resetar);
-            this.grp_buscar_alterar_clientes.Controls.Add(this.btn_pesquisar);
-            this.grp_buscar_alterar_clientes.Controls.Add(this.dgv_registros);
-            this.grp_buscar_alterar_clientes.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grp_buscar_alterar_clientes.Location = new System.Drawing.Point(7, 451);
-            this.grp_buscar_alterar_clientes.Name = "grp_buscar_alterar_clientes";
-            this.grp_buscar_alterar_clientes.Size = new System.Drawing.Size(785, 261);
-            this.grp_buscar_alterar_clientes.TabIndex = 35;
-            this.grp_buscar_alterar_clientes.TabStop = false;
-            this.grp_buscar_alterar_clientes.Text = "Alterar / Pesquisar:";
+            this.grp_buscar_clientes.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.grp_buscar_clientes.Controls.Add(this.btn_resetar);
+            this.grp_buscar_clientes.Controls.Add(this.btn_pesquisar);
+            this.grp_buscar_clientes.Controls.Add(this.dgv_registros);
+            this.grp_buscar_clientes.Font = new System.Drawing.Font("Arial", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grp_buscar_clientes.Location = new System.Drawing.Point(7, 451);
+            this.grp_buscar_clientes.Name = "grp_buscar_clientes";
+            this.grp_buscar_clientes.Size = new System.Drawing.Size(785, 261);
+            this.grp_buscar_clientes.TabIndex = 35;
+            this.grp_buscar_clientes.TabStop = false;
+            this.grp_buscar_clientes.Text = "Pesquisar:";
             // 
             // btn_resetar
             // 
@@ -303,17 +303,17 @@
             this.lbl_data_nascimento_cliente.TabIndex = 41;
             this.lbl_data_nascimento_cliente.Text = "Data de Nascimento:";
             // 
-            // pctbox_foto
+            // pctbox_foto_cliente
             // 
-            this.pctbox_foto.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.pctbox_foto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pctbox_foto.Location = new System.Drawing.Point(576, 20);
-            this.pctbox_foto.Name = "pctbox_foto";
-            this.pctbox_foto.Size = new System.Drawing.Size(212, 261);
-            this.pctbox_foto.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pctbox_foto.TabIndex = 42;
-            this.pctbox_foto.TabStop = false;
-            this.pctbox_foto.Click += new System.EventHandler(this.pctbox_foto_Click);
+            this.pctbox_foto_cliente.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.pctbox_foto_cliente.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pctbox_foto_cliente.Location = new System.Drawing.Point(576, 20);
+            this.pctbox_foto_cliente.Name = "pctbox_foto_cliente";
+            this.pctbox_foto_cliente.Size = new System.Drawing.Size(212, 261);
+            this.pctbox_foto_cliente.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pctbox_foto_cliente.TabIndex = 42;
+            this.pctbox_foto_cliente.TabStop = false;
+            this.pctbox_foto_cliente.Click += new System.EventHandler(this.pctbox_foto_Click);
             // 
             // lbl_renda
             // 
@@ -428,14 +428,14 @@
             this.Controls.Add(this.lbl_cidade);
             this.Controls.Add(this.cb_cidade);
             this.Controls.Add(this.lbl_renda);
-            this.Controls.Add(this.pctbox_foto);
+            this.Controls.Add(this.pctbox_foto_cliente);
             this.Controls.Add(this.lbl_data_nascimento_cliente);
             this.Controls.Add(this.dttmpck_data_nascimento_cliente);
             this.Controls.Add(this.txt_telefone_cliente);
             this.Controls.Add(this.lbl_telefone_cliente);
             this.Controls.Add(this.txt_email_cliente);
             this.Controls.Add(this.lbl_email_cliente);
-            this.Controls.Add(this.grp_buscar_alterar_clientes);
+            this.Controls.Add(this.grp_buscar_clientes);
             this.Controls.Add(this.btn_fechar);
             this.Controls.Add(this.btn_excluir);
             this.Controls.Add(this.btn_cancelar);
@@ -451,9 +451,9 @@
             this.Text = "Cadastro de Clientes";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmCliente_Load);
-            this.grp_buscar_alterar_clientes.ResumeLayout(false);
+            this.grp_buscar_clientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pctbox_foto)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pctbox_foto_cliente)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -461,7 +461,7 @@
 
         #endregion
 
-        private System.Windows.Forms.GroupBox grp_buscar_alterar_clientes;
+        private System.Windows.Forms.GroupBox grp_buscar_clientes;
         private System.Windows.Forms.DataGridView dgv_registros;
         private System.Windows.Forms.Button btn_fechar;
         private System.Windows.Forms.Button btn_excluir;
@@ -479,14 +479,14 @@
         private System.Windows.Forms.Label lbl_telefone_cliente;
         private System.Windows.Forms.DateTimePicker dttmpck_data_nascimento_cliente;
         private System.Windows.Forms.Label lbl_data_nascimento_cliente;
-        private System.Windows.Forms.PictureBox pctbox_foto;
+        private System.Windows.Forms.PictureBox pctbox_foto_cliente;
         private System.Windows.Forms.Label lbl_renda;
         private System.Windows.Forms.ComboBox cb_cidade;
         private System.Windows.Forms.Label lbl_cidade;
         private System.Windows.Forms.TextBox txt_unidade_federal;
         private System.Windows.Forms.Label lbl_unidade_federal;
         private System.Windows.Forms.MaskedTextBox mtxt_cpf;
-        private System.Windows.Forms.OpenFileDialog ofd_foto;
+        private System.Windows.Forms.OpenFileDialog ofd_foto_cliente;
         private System.Windows.Forms.CheckBox chbox_bloqueio_venda;
         private System.Windows.Forms.Button btn_pesquisar;
         private System.Windows.Forms.Button btn_resetar;

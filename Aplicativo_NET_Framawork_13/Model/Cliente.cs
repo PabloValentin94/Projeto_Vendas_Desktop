@@ -210,10 +210,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.Abrir_Conexao();
 
-                Database.comando = new MySqlCommand("SELECT * FROM Cliente WHERE nome = @nome " +
+                Database.comando = new MySqlCommand("SELECT * FROM Cliente WHERE nome LIKE @nome " +
                                                     "ORDER BY nome ASC", Database.conexao);
 
-                Database.comando.Parameters.AddWithValue("@nome", this.nome + "%");
+                Database.comando.Parameters.AddWithValue("@nome", "%" + this.nome + "%");
 
                 Database.adaptador = new MySqlDataAdapter(Database.comando);
 

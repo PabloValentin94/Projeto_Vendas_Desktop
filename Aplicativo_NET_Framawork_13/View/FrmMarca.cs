@@ -407,6 +407,30 @@ namespace Aplicativo_NET_Framawork_13.View
 
         }
 
+        private void grp_buscar_alterar_marcas_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_nome_marca_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txt_codigo_marca_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_nome_marca_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbl_codigo_marca_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 }

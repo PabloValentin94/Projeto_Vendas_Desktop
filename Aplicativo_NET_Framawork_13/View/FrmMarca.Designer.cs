@@ -64,6 +64,7 @@
             this.grp_buscar_alterar_marcas.TabIndex = 45;
             this.grp_buscar_alterar_marcas.TabStop = false;
             this.grp_buscar_alterar_marcas.Text = "Alterar / Pesquisar:";
+            this.grp_buscar_alterar_marcas.Enter += new System.EventHandler(this.grp_buscar_alterar_marcas_Enter);
             // 
             // btn_pesquisar
             // 
@@ -207,6 +208,7 @@
             this.txt_nome_marca.Name = "txt_nome_marca";
             this.txt_nome_marca.Size = new System.Drawing.Size(659, 26);
             this.txt_nome_marca.TabIndex = 39;
+            this.txt_nome_marca.TextChanged += new System.EventHandler(this.txt_nome_marca_TextChanged);
             // 
             // txt_codigo_marca
             // 
@@ -218,6 +220,7 @@
             this.txt_codigo_marca.Size = new System.Drawing.Size(100, 26);
             this.txt_codigo_marca.TabIndex = 38;
             this.txt_codigo_marca.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txt_codigo_marca.TextChanged += new System.EventHandler(this.txt_codigo_marca_TextChanged);
             // 
             // lbl_nome_marca
             // 
@@ -229,6 +232,7 @@
             this.lbl_nome_marca.Size = new System.Drawing.Size(61, 19);
             this.lbl_nome_marca.TabIndex = 37;
             this.lbl_nome_marca.Text = "Marca:";
+            this.lbl_nome_marca.Click += new System.EventHandler(this.lbl_nome_marca_Click);
             // 
             // lbl_codigo_marca
             // 
@@ -240,6 +244,7 @@
             this.lbl_codigo_marca.Size = new System.Drawing.Size(71, 19);
             this.lbl_codigo_marca.TabIndex = 36;
             this.lbl_codigo_marca.Text = "Código:";
+            this.lbl_codigo_marca.Click += new System.EventHandler(this.lbl_codigo_marca_Click);
             // 
             // FrmMarca
             // 
