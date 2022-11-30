@@ -123,6 +123,10 @@ namespace Aplicativo_NET_Framawork_13.View
 
                     fornecedor = txt_fornecedor_produto.Text,
 
+                    estoque = Convert.ToInt32(nud_estoque_produto.Value),
+
+                    preco_venda = double.Parse(txt_preco_de_venda.Text),
+
                     foto = pctbox_foto_produto.ImageLocation,
 
                     fk_categoria = (int)cb_categoria_produto.SelectedValue,
@@ -218,9 +222,15 @@ namespace Aplicativo_NET_Framawork_13.View
             this.produto = new Model.Produto()
             {
 
+                id = int.Parse(txt_codigo_produto.Text),
+
                 nome = txt_nome_produto.Text,
 
                 fornecedor = txt_fornecedor_produto.Text,
+
+                estoque = Convert.ToInt32(nud_estoque_produto.Value),
+
+                preco_venda = double.Parse(txt_preco_de_venda.Text),
 
                 foto = pctbox_foto_produto.ImageLocation,
 
@@ -315,9 +325,15 @@ namespace Aplicativo_NET_Framawork_13.View
 
             txt_fornecedor_produto.Clear();
 
+            txt_preco_de_venda.Clear();
+
             cb_categoria_produto.Text = "";
 
             cb_marca_produto.Text = "";
+
+            nud_estoque_produto.Value = 0;
+
+            pctbox_foto_produto.ImageLocation = null;
 
         }
 
@@ -406,6 +422,10 @@ namespace Aplicativo_NET_Framawork_13.View
                 txt_nome_produto.Text = dgv_registros.CurrentRow.Cells["nome"].Value.ToString();
 
                 txt_fornecedor_produto.Text = dgv_registros.CurrentRow.Cells["fornecedor"].Value.ToString();
+
+                nud_estoque_produto.Value = Convert.ToDecimal(dgv_registros.CurrentRow.Cells["estoque"].Value);
+
+                txt_preco_de_venda.Text = dgv_registros.CurrentRow.Cells["preco_venda"].Value.ToString();
 
                 cb_categoria_produto.Text = dgv_registros.CurrentRow.Cells["categoria"].Value.ToString();
 

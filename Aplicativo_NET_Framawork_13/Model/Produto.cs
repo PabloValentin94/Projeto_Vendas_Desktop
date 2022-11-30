@@ -20,6 +20,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
         public string fornecedor { get; set; }
 
+        public int estoque { get; set; }
+
+        public double preco_venda { get; set; }
+
         public string foto { get; set; }
 
         public int fk_categoria { get; set; }
@@ -38,14 +42,19 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.Abrir_Conexao();
 
-                Database.comando = new MySqlCommand("INSERT INTO Produto(nome, fornecedor, foto, " +
+                Database.comando = new MySqlCommand("INSERT INTO Produto(nome, fornecedor, estoque, " +
+                                                    "preco_venda, foto, " +
                                                     "fk_categoria, fk_marca, categoria, marca) " +
-                                                    "VALUES(@nome, @fornecedor, @foto, " +
+                                                    "VALUES(@nome, @fornecedor, @estoque, @preco_venda, @foto, " +
                                                     "@fk_categoria, @fk_marca, @categoria, @marca)", Database.conexao);
 
                 Database.comando.Parameters.AddWithValue("@nome", this.nome);
 
                 Database.comando.Parameters.AddWithValue("@fornecedor", this.fornecedor);
+
+                Database.comando.Parameters.AddWithValue("@estoque", this.estoque);
+
+                Database.comando.Parameters.AddWithValue("@preco_venda", this.preco_venda);
 
                 Database.comando.Parameters.AddWithValue("@foto", this.foto);
 
@@ -80,13 +89,18 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.Abrir_Conexao();
 
-                Database.comando = new MySqlCommand("UPDATE Produto SET nome = @nome, fornecedor = @fornecedor, foto = @foto" +
+                Database.comando = new MySqlCommand("UPDATE Produto SET nome = @nome, fornecedor = @fornecedor, esto" +
+                                                    "preco_venda = @preco_venda, foto = @foto, " +
                                                     "fk_categoria = @fk_categoria, fk_marca = @fk_marca, " +
-                                                    "categoria = @categoria, marca = @marca", Database.conexao);
+                                                    "categoria = @categoria, marca = @marca WHERE id = @id", Database.conexao);
+
+                Database.comando.Parameters.AddWithValue("@id", this.id);
 
                 Database.comando.Parameters.AddWithValue("@nome", this.nome);
 
                 Database.comando.Parameters.AddWithValue("@fornecedor", this.fornecedor);
+
+                Database.comando.Parameters.AddWithValue("@preco_venda", this.preco_venda);
 
                 Database.comando.Parameters.AddWithValue("@foto", this.foto);
 

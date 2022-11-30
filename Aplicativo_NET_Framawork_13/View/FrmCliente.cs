@@ -21,6 +21,8 @@ namespace Aplicativo_NET_Framawork_13.View
 
         Model.Cliente cliente;
 
+        DateTime data_maxima = new DateTime(DateTime.Now.Year - 18, DateTime.Now.Month, DateTime.Now.Day);
+
         public FrmCliente()
         {
 
@@ -89,7 +91,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
             dttmpck_data_nascimento_cliente.MinDate = new DateTime(DateTime.Now.Year - 100, DateTime.Now.Month, DateTime.Now.Day);
 
-            dttmpck_data_nascimento_cliente.MaxDate = new DateTime(DateTime.Now.Year - 18, DateTime.Now.Month, DateTime.Now.Day);
+            dttmpck_data_nascimento_cliente.MaxDate = this.data_maxima;
 
             // Fazendo com que a imagem caiba dentro da PictureBox.
 
@@ -143,7 +145,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
                     foto = pctbox_foto_cliente.ImageLocation,
 
-                    venda = chbox_bloqueio_venda.Checked,
+                    bloqueio_venda = chbox_bloqueio_venda.Checked,
 
                     fk_cidade = (int)cb_cidade.SelectedValue,
 
@@ -196,7 +198,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
                 foto = pctbox_foto_cliente.ImageLocation,
 
-                venda = chbox_bloqueio_venda.Checked,
+                bloqueio_venda = chbox_bloqueio_venda.Checked,
 
                 fk_cidade = (int)cb_cidade.SelectedValue,
 
@@ -229,14 +231,22 @@ namespace Aplicativo_NET_Framawork_13.View
         {
 
             if(String.IsNullOrEmpty(txt_codigo_cliente.Text) && String.IsNullOrEmpty(txt_nome_cliente.Text)
-               && String.IsNullOrEmpty(txt_email_cliente.Text) && String.IsNullOrEmpty(mtxt_cpf.Text)
-               && String.IsNullOrEmpty(txt_telefone_cliente.Text) && String.IsNullOrEmpty(cb_cidade.Text)
-               && String.IsNullOrEmpty(txt_unidade_federal.Text) && String.IsNullOrEmpty(txt_renda.Text)
-               && btn_pesquisar.Enabled == false)
+               && String.IsNullOrEmpty(txt_email_cliente.Text) && String.IsNullOrEmpty(txt_telefone_cliente.Text)
+               && String.IsNullOrEmpty(cb_cidade.Text) && dttmpck_data_nascimento_cliente.Value == data_maxima
+               && String.IsNullOrEmpty(txt_renda.Text))
             {
 
-                MessageBox.Show("Não há nada a ser cancelado.", "Atenção!",
-                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                mtxt_cpf.Mask = "";
+
+                if(String.IsNullOrEmpty(mtxt_cpf.Text))
+                {
+
+                    MessageBox.Show("Não há nada a ser cancelado.", "Atenção!",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+
+                mtxt_cpf.Mask = "###.###.###-##";
 
             }
 
@@ -298,6 +308,10 @@ namespace Aplicativo_NET_Framawork_13.View
             txt_unidade_federal.Clear();
 
             txt_renda.Clear();
+
+            pctbox_foto_cliente.ImageLocation = null;
+
+            dttmpck_data_nascimento_cliente.Value = data_maxima;
 
         }
 
@@ -429,7 +443,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
                 pctbox_foto_cliente.ImageLocation = dgv_registros.CurrentRow.Cells["foto"].Value.ToString();
 
-                chbox_bloqueio_venda.Checked = Convert.ToBoolean(dgv_registros.CurrentRow.Cells["venda"].Value);
+                chbox_bloqueio_venda.Checked = Convert.ToBoolean(dgv_registros.CurrentRow.Cells["bloqueio_venda"].Value);
 
                 cb_cidade.Text = dgv_registros.CurrentRow.Cells["cidade"].Value.ToString();
 

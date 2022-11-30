@@ -32,7 +32,7 @@ namespace Aplicativo_NET_Framawork_13.Model
 
         public string foto { get; set; }
 
-        public bool venda { get; set; }
+        public bool bloqueio_venda { get; set; }
 
         public int fk_cidade { get; set; }
 
@@ -103,7 +103,7 @@ namespace Aplicativo_NET_Framawork_13.Model
                                                     "email = @email, cpf = @cpf, telefone = @telefone, " +
                                                     "data_nascimento = @data_nascimento, " +
                                                     "renda = @renda, foto = @foto, venda = @venda, " +
-                                                    "fk_cidade = @fk_cidade" +
+                                                    "fk_cidade = @fk_cidade " +
                                                     "WHERE id = @id", Database.conexao);
 
                 Database.comando.Parameters.AddWithValue("@nome", this.nome);

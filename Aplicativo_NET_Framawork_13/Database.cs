@@ -30,7 +30,7 @@ namespace Aplicativo_NET_Framawork_13
 
                 // Criando uma conexão com o MySQL e abrindo-a.
 
-                conexao = new MySqlConnection("server=localhost;port=3306;uid=root;pwd=etecjau");
+                conexao = new MySqlConnection("server=localhost;port=3307;uid=root;pwd=etecjau");
 
                 conexao.Open();
 
@@ -117,7 +117,7 @@ namespace Aplicativo_NET_Framawork_13
                                            "email varchar(100)," +
                                            "data_nascimento date," +
                                            "renda double," +
-                                           "venda bool," +
+                                           "bloqueio_venda bool," +
                                            "foto varchar(100)," +
                                            "fk_cidade integer," +
                                            "cidade varchar(40)," +
@@ -131,6 +131,8 @@ namespace Aplicativo_NET_Framawork_13
                                            "(id integer auto_increment primary key," +
                                            "nome varchar(100)," +
                                            "fornecedor varchar(100)," +
+                                           "estoque integer, " +
+                                           "preco_venda double, " +
                                            "foto varchar(100)," +
                                            "fk_categoria integer," +
                                            "fk_marca integer," +

@@ -49,9 +49,14 @@
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.dgv_registros = new System.Windows.Forms.DataGridView();
             this.ofd_foto_produto = new System.Windows.Forms.OpenFileDialog();
+            this.lbl_estoque_produto = new System.Windows.Forms.Label();
+            this.nud_estoque_produto = new System.Windows.Forms.NumericUpDown();
+            this.txt_preco_de_venda = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pctbox_foto_produto)).BeginInit();
             this.grp_buscar_clientes.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_estoque_produto)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_fechar
@@ -128,9 +133,9 @@
             // 
             this.txt_nome_produto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_nome_produto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_nome_produto.Location = new System.Drawing.Point(136, 65);
+            this.txt_nome_produto.Location = new System.Drawing.Point(116, 46);
             this.txt_nome_produto.Name = "txt_nome_produto";
-            this.txt_nome_produto.Size = new System.Drawing.Size(477, 26);
+            this.txt_nome_produto.Size = new System.Drawing.Size(502, 26);
             this.txt_nome_produto.TabIndex = 49;
             // 
             // txt_codigo_produto
@@ -138,7 +143,7 @@
             this.txt_codigo_produto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_codigo_produto.Enabled = false;
             this.txt_codigo_produto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_codigo_produto.Location = new System.Drawing.Point(10, 65);
+            this.txt_codigo_produto.Location = new System.Drawing.Point(10, 46);
             this.txt_codigo_produto.Name = "txt_codigo_produto";
             this.txt_codigo_produto.Size = new System.Drawing.Size(100, 26);
             this.txt_codigo_produto.TabIndex = 48;
@@ -149,7 +154,7 @@
             this.lbl_nome_produto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_nome_produto.AutoSize = true;
             this.lbl_nome_produto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_nome_produto.Location = new System.Drawing.Point(133, 44);
+            this.lbl_nome_produto.Location = new System.Drawing.Point(113, 25);
             this.lbl_nome_produto.Name = "lbl_nome_produto";
             this.lbl_nome_produto.Size = new System.Drawing.Size(77, 19);
             this.lbl_nome_produto.TabIndex = 47;
@@ -160,7 +165,7 @@
             this.lbl_codigo_produto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_codigo_produto.AutoSize = true;
             this.lbl_codigo_produto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_codigo_produto.Location = new System.Drawing.Point(6, 44);
+            this.lbl_codigo_produto.Location = new System.Drawing.Point(6, 25);
             this.lbl_codigo_produto.Name = "lbl_codigo_produto";
             this.lbl_codigo_produto.Size = new System.Drawing.Size(71, 19);
             this.lbl_codigo_produto.TabIndex = 46;
@@ -170,9 +175,9 @@
             // 
             this.txt_fornecedor_produto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.txt_fornecedor_produto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txt_fornecedor_produto.Location = new System.Drawing.Point(11, 139);
+            this.txt_fornecedor_produto.Location = new System.Drawing.Point(10, 111);
             this.txt_fornecedor_produto.Name = "txt_fornecedor_produto";
-            this.txt_fornecedor_produto.Size = new System.Drawing.Size(219, 26);
+            this.txt_fornecedor_produto.Size = new System.Drawing.Size(258, 26);
             this.txt_fornecedor_produto.TabIndex = 58;
             // 
             // lbl_marca_produto
@@ -180,7 +185,7 @@
             this.lbl_marca_produto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_marca_produto.AutoSize = true;
             this.lbl_marca_produto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_marca_produto.Location = new System.Drawing.Point(423, 118);
+            this.lbl_marca_produto.Location = new System.Drawing.Point(305, 154);
             this.lbl_marca_produto.Name = "lbl_marca_produto";
             this.lbl_marca_produto.Size = new System.Drawing.Size(61, 19);
             this.lbl_marca_produto.TabIndex = 57;
@@ -191,7 +196,7 @@
             this.lbl_fornecedor_produto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_fornecedor_produto.AutoSize = true;
             this.lbl_fornecedor_produto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_fornecedor_produto.Location = new System.Drawing.Point(7, 118);
+            this.lbl_fornecedor_produto.Location = new System.Drawing.Point(6, 90);
             this.lbl_fornecedor_produto.Name = "lbl_fornecedor_produto";
             this.lbl_fornecedor_produto.Size = new System.Drawing.Size(104, 19);
             this.lbl_fornecedor_produto.TabIndex = 56;
@@ -214,9 +219,9 @@
             this.cb_marca_produto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cb_marca_produto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_marca_produto.FormattingEnabled = true;
-            this.cb_marca_produto.Location = new System.Drawing.Point(427, 140);
+            this.cb_marca_produto.Location = new System.Drawing.Point(309, 176);
             this.cb_marca_produto.Name = "cb_marca_produto";
-            this.cb_marca_produto.Size = new System.Drawing.Size(186, 26);
+            this.cb_marca_produto.Size = new System.Drawing.Size(309, 26);
             this.cb_marca_produto.TabIndex = 61;
             // 
             // cb_categoria_produto
@@ -224,9 +229,9 @@
             this.cb_categoria_produto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.cb_categoria_produto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cb_categoria_produto.FormattingEnabled = true;
-            this.cb_categoria_produto.Location = new System.Drawing.Point(236, 139);
+            this.cb_categoria_produto.Location = new System.Drawing.Point(11, 176);
             this.cb_categoria_produto.Name = "cb_categoria_produto";
-            this.cb_categoria_produto.Size = new System.Drawing.Size(185, 26);
+            this.cb_categoria_produto.Size = new System.Drawing.Size(292, 26);
             this.cb_categoria_produto.TabIndex = 63;
             // 
             // lbl_categoria_produto
@@ -234,7 +239,7 @@
             this.lbl_categoria_produto.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbl_categoria_produto.AutoSize = true;
             this.lbl_categoria_produto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbl_categoria_produto.Location = new System.Drawing.Point(232, 117);
+            this.lbl_categoria_produto.Location = new System.Drawing.Point(7, 154);
             this.lbl_categoria_produto.Name = "lbl_categoria_produto";
             this.lbl_categoria_produto.Size = new System.Drawing.Size(89, 19);
             this.lbl_categoria_produto.TabIndex = 62;
@@ -294,12 +299,56 @@
             this.dgv_registros.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_registros_CellDoubleClick);
             this.dgv_registros.Click += new System.EventHandler(this.dgv_registros_Click);
             // 
+            // lbl_estoque_produto
+            // 
+            this.lbl_estoque_produto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.lbl_estoque_produto.AutoSize = true;
+            this.lbl_estoque_produto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_estoque_produto.Location = new System.Drawing.Point(490, 90);
+            this.lbl_estoque_produto.Name = "lbl_estoque_produto";
+            this.lbl_estoque_produto.Size = new System.Drawing.Size(79, 19);
+            this.lbl_estoque_produto.TabIndex = 65;
+            this.lbl_estoque_produto.Text = "Estoque:";
+            // 
+            // nud_estoque_produto
+            // 
+            this.nud_estoque_produto.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.nud_estoque_produto.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nud_estoque_produto.Location = new System.Drawing.Point(494, 112);
+            this.nud_estoque_produto.Name = "nud_estoque_produto";
+            this.nud_estoque_produto.Size = new System.Drawing.Size(124, 26);
+            this.nud_estoque_produto.TabIndex = 67;
+            // 
+            // txt_preco_de_venda
+            // 
+            this.txt_preco_de_venda.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.txt_preco_de_venda.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txt_preco_de_venda.Location = new System.Drawing.Point(274, 111);
+            this.txt_preco_de_venda.Name = "txt_preco_de_venda";
+            this.txt_preco_de_venda.Size = new System.Drawing.Size(214, 26);
+            this.txt_preco_de_venda.TabIndex = 69;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(270, 90);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(135, 19);
+            this.label1.TabIndex = 68;
+            this.label1.Text = "Preço de Venda:";
+            // 
             // FrmProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 586);
             this.ControlBox = false;
+            this.Controls.Add(this.txt_preco_de_venda);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.nud_estoque_produto);
+            this.Controls.Add(this.lbl_estoque_produto);
             this.Controls.Add(this.grp_buscar_clientes);
             this.Controls.Add(this.cb_categoria_produto);
             this.Controls.Add(this.lbl_categoria_produto);
@@ -325,6 +374,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pctbox_foto_produto)).EndInit();
             this.grp_buscar_clientes.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nud_estoque_produto)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -352,5 +402,9 @@
         private System.Windows.Forms.Button btn_pesquisar;
         private System.Windows.Forms.DataGridView dgv_registros;
         private System.Windows.Forms.OpenFileDialog ofd_foto_produto;
+        private System.Windows.Forms.Label lbl_estoque_produto;
+        private System.Windows.Forms.NumericUpDown nud_estoque_produto;
+        private System.Windows.Forms.TextBox txt_preco_de_venda;
+        private System.Windows.Forms.Label label1;
     }
 }
