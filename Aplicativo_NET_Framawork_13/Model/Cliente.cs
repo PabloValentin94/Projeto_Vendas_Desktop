@@ -13,8 +13,10 @@ using MySql.Data.MySqlClient;
 namespace Aplicativo_NET_Framawork_13.Model
 {
 
-    internal class Cliente
+    public class Cliente
     {
+
+        private string file_name = "Cliente.cs"; 
 
         public int id { get; set; }
 
@@ -36,10 +38,6 @@ namespace Aplicativo_NET_Framawork_13.Model
 
         public int fk_cidade { get; set; }
 
-        public string cidade { get; set; }
-
-        public string uf { get; set; }
-
         public void Incluir()
         {
 
@@ -50,9 +48,9 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.comando = new MySqlCommand("INSERT INTO " +
                                                     "Cliente(nome, email, cpf, telefone, data_nascimento, " +
-                                                    "renda, foto, venda, fk_cidade, cidade, uf) " +
+                                                    "renda, foto, bloqueio_venda, fk_cidade) " +
                                                     "VALUES(@nome, @email, @cpf, @telefone, @data_nascimento, " +
-                                                    "@renda, @foto, @venda, @fk_cidade, @cidade, @uf)", Database.conexao);
+                                                    "@renda, @foto, @bloqueio_venda, @fk_cidade)", Database.conexao);
 
                 Database.comando.Parameters.AddWithValue("@nome", this.nome);
 
@@ -68,13 +66,9 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.comando.Parameters.AddWithValue("@foto", this.foto);
 
-                Database.comando.Parameters.AddWithValue("@venda", this.venda);
+                Database.comando.Parameters.AddWithValue("@bloqueio_venda", this.bloqueio_venda);
 
                 Database.comando.Parameters.AddWithValue("@fk_cidade", this.fk_cidade);
-
-                Database.comando.Parameters.AddWithValue("@cidade", this.cidade);
-
-                Database.comando.Parameters.AddWithValue("@uf", this.uf);
 
                 Database.comando.ExecuteNonQuery();
 
@@ -82,10 +76,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -102,7 +96,7 @@ namespace Aplicativo_NET_Framawork_13.Model
                 Database.comando = new MySqlCommand("UPDATE Cliente SET nome = @nome, " +
                                                     "email = @email, cpf = @cpf, telefone = @telefone, " +
                                                     "data_nascimento = @data_nascimento, " +
-                                                    "renda = @renda, foto = @foto, venda = @venda, " +
+                                                    "renda = @renda, foto = @foto, bloqueio_venda = @bloqueio_venda, " +
                                                     "fk_cidade = @fk_cidade " +
                                                     "WHERE id = @id", Database.conexao);
 
@@ -120,7 +114,7 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.comando.Parameters.AddWithValue("@foto", this.foto);
 
-                Database.comando.Parameters.AddWithValue("@venda", this.venda);
+                Database.comando.Parameters.AddWithValue("@bloqueio_venda", this.bloqueio_venda);
 
                 Database.comando.Parameters.AddWithValue("@fk_cidade", this.fk_cidade);
 
@@ -132,10 +126,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -160,10 +154,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -177,7 +171,9 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.Abrir_Conexao();
 
-                Database.comando = new MySqlCommand("SELECT * FROM Cliente", Database.conexao);
+                Database.comando = new MySqlCommand("SELECT cli.*, cid.nome as cidade, cid.uf as uf " +
+                                                    "FROM Cliente cli " +
+                                                    "INNER JOIN Cidade cid ON cli.fk_cidade = cid.id", Database.conexao);
 
                 Database.adaptador = new MySqlDataAdapter(Database.comando);
 
@@ -191,10 +187,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
 
@@ -210,8 +206,11 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.Abrir_Conexao();
 
-                Database.comando = new MySqlCommand("SELECT * FROM Cliente WHERE nome LIKE @nome " +
-                                                    "ORDER BY nome ASC", Database.conexao);
+                Database.comando = new MySqlCommand("SELECT cli.*, cid.nome as cidade, cid.uf as uf " +
+                                                    "FROM Cliente cli " +
+                                                    "INNER JOIN Cidade cid ON cli.fk_cidade = cid.id " +
+                                                    "WHERE cli.nome LIKE @nome " +
+                                                    "ORDER BY cli.nome ASC", Database.conexao);
 
                 Database.comando.Parameters.AddWithValue("@nome", "%" + this.nome + "%");
 
@@ -227,10 +226,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
 

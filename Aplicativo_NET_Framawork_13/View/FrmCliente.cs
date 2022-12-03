@@ -147,16 +147,12 @@ namespace Aplicativo_NET_Framawork_13.View
 
                     bloqueio_venda = chbox_bloqueio_venda.Checked,
 
-                    fk_cidade = (int)cb_cidade.SelectedValue,
-
-                    cidade = cb_cidade.Text,
-
-                    uf = txt_unidade_federal.Text
+                    fk_cidade = (int)cb_cidade.SelectedValue
 
                 };
 
                 if (MessageBox.Show("Deseja mesmo confirmar a adição de um novo registro ao banco de dados?", "Atenção!",
-                                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
 
                     this.cliente.Incluir();
@@ -200,11 +196,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
                 bloqueio_venda = chbox_bloqueio_venda.Checked,
 
-                fk_cidade = (int)cb_cidade.SelectedValue,
-
-                cidade = cb_cidade.Text,
-
-                uf = txt_unidade_federal.Text
+                fk_cidade = (int)cb_cidade.SelectedValue
 
             };
 
@@ -243,6 +235,13 @@ namespace Aplicativo_NET_Framawork_13.View
 
                     MessageBox.Show("Não há nada a ser cancelado.", "Atenção!",
                                     MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+
+                else
+                {
+
+                    mtxt_cpf.Clear();
 
                 }
 

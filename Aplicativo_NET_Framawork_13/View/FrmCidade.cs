@@ -17,67 +17,103 @@ namespace Aplicativo_NET_Framawork_13.View
         public FrmCidade()
         {
 
-            InitializeComponent();
+            try
+            {
 
-            desabilitar_elementos();
+                InitializeComponent();
 
-            carregar_dgv();
+                desabilitar_elementos();
 
-            //gerar_id_codigo();
+                carregar_dgv();
 
-            btn_alterar.Enabled = false;
+                //gerar_id_codigo();
 
-            btn_excluir.Enabled = false;
+                btn_alterar.Enabled = false;
+
+                btn_excluir.Enabled = false;
+
+            }
+
+            catch(Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            
+            }
 
         }
 
         private void FrmCidade_Load(object sender, EventArgs e)
         {
 
-            /* Criando as colunas.
+            try
+            {
 
-            dgv_registros.Columns.Insert(0, new DataGridViewCheckBoxColumn());
+                /* Criando as colunas.
 
-            dgv_registros.Columns.Insert(1, new DataGridViewTextBoxColumn());
+                dgv_registros.Columns.Insert(0, new DataGridViewCheckBoxColumn());
 
-            dgv_registros.Columns.Insert(2, new DataGridViewTextBoxColumn());
+                dgv_registros.Columns.Insert(1, new DataGridViewTextBoxColumn());
 
-            dgv_registros.Columns.Insert(3, new DataGridViewTextBoxColumn());
+                dgv_registros.Columns.Insert(2, new DataGridViewTextBoxColumn());
 
-            Renomeando as colunas.
+                dgv_registros.Columns.Insert(3, new DataGridViewTextBoxColumn());
 
-            dgv_registros.Columns[0].Name = "selecionado";
+                Renomeando as colunas.
 
-            dgv_registros.Columns[1].Name = "ID";
+                dgv_registros.Columns[0].Name = "selecionado";
 
-            dgv_registros.Columns[2].Name = "Nome";
+                dgv_registros.Columns[1].Name = "ID";
 
-            dgv_registros.Columns[3].Name = "Unidade Federal"; */
+                dgv_registros.Columns[2].Name = "Nome";
 
-            // Definindo permissões do usuário.
+                dgv_registros.Columns[3].Name = "Unidade Federal"; */
 
-            dgv_registros.AllowUserToAddRows = false;
+                // Definindo permissões do usuário.
 
-            dgv_registros.AllowUserToDeleteRows = false;
+                dgv_registros.AllowUserToAddRows = false;
 
-            dgv_registros.AllowUserToOrderColumns = true;
+                dgv_registros.AllowUserToDeleteRows = false;
 
-            // Configurando o DataGridView.
+                dgv_registros.AllowUserToOrderColumns = true;
 
-            dgv_registros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+                // Configurando o DataGridView.
 
-            dgv_registros.ReadOnly = true;
+                dgv_registros.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.AllCells;
+
+                dgv_registros.ReadOnly = true;
+
+            }
+
+            catch(Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
         private void btn_fechar_Click(object sender, EventArgs e)
         {
 
-            if(MessageBox.Show("O formulário será fechado.", "Aviso!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
-               == DialogResult.OK)
+            try
             {
 
-                this.Close();
+                if (MessageBox.Show("O formulário será fechado.", "Aviso!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning)
+                    == DialogResult.OK)
+                {
+
+                    this.Close();
+
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -86,58 +122,85 @@ namespace Aplicativo_NET_Framawork_13.View
         private void btn_incluir_Click(object sender, EventArgs e)
         {
 
-            if(String.IsNullOrEmpty(txt_nome_cidade.Text) || String.IsNullOrEmpty(txt_uf_cidade.Text))
+            try
             {
 
-                MessageBox.Show("Preencha os campos Cidade e U.F. antes de prosseguir.",
-                                "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-            }
-
-            else
-            {
-
-                Model.Cidade insercao = new Model.Cidade()
+                if (String.IsNullOrEmpty(txt_nome_cidade.Text) || String.IsNullOrEmpty(txt_uf_cidade.Text))
                 {
 
-                    nome = txt_nome_cidade.Text,
+                    MessageBox.Show("Preencha os campos Cidade e U.F. antes de prosseguir.",
+                                    "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
 
-                    uf = txt_uf_cidade.Text.ToUpper()
+                }
 
-                };
-
-                if(dgv_registros.RowCount > 0)
+                else
                 {
 
-                    bool condicao_parada = false;
-
-                    foreach(DataGridViewRow linha in dgv_registros.Rows)
+                    Model.Cidade insercao = new Model.Cidade()
                     {
 
-                        if(linha.Cells[1].Value.ToString() == insercao.nome)
+                        nome = txt_nome_cidade.Text,
+
+                        uf = txt_uf_cidade.Text.ToUpper()
+
+                    };
+
+                    if (dgv_registros.RowCount > 0)
+                    {
+
+                        bool condicao_parada = false;
+
+                        foreach (DataGridViewRow linha in dgv_registros.Rows)
                         {
 
-                            condicao_parada = true;
+                            if (linha.Cells[1].Value.ToString() == insercao.nome)
+                            {
 
-                            break;
+                                condicao_parada = true;
+
+                                break;
+
+                            }
+
+                        }
+
+                        if (condicao_parada == true)
+                        {
+
+                            MessageBox.Show("Não é possível inserir uma cidade que já está registrada.", "Aviso!",
+                                            MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                        }
+
+                        else
+                        {
+
+                            if (MessageBox.Show("Deseja mesmo confirmar a adição de um novo registro ao banco de dados?", "Atenção!",
+                                               MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                            {
+
+                                insercao.Incluir();
+
+                                limpar_campos();
+
+                                carregar_dgv();
+
+                                //gerar_id_codigo();
+
+                                MessageBox.Show("Inserção efetuada com sucesso.", "Atenção!",
+                                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                            }
 
                         }
 
                     }
 
-                    if(condicao_parada == true)
+                    else if (dgv_registros.RowCount == 0)
                     {
 
-                        MessageBox.Show("Não é possível inserir uma cidade que já está registrada.", "Aviso!",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Warning);
-
-                    }
-
-                    else
-                    {
-
-                        if(MessageBox.Show("Deseja mesmo confirmar a adição de um novo registro ao banco de dados?", "Atenção!",
-                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                        if (MessageBox.Show("Deseja mesmo confirmar a adição de um novo registro ao banco de dados?", "Atenção!",
+                                            MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                         {
 
                             insercao.Incluir();
@@ -157,27 +220,12 @@ namespace Aplicativo_NET_Framawork_13.View
 
                 }
 
-                else if(dgv_registros.RowCount == 0)
-                {
+            }
 
-                    if (MessageBox.Show("Deseja mesmo confirmar a adição de um novo registro ao banco de dados?", "Atenção!",
-                                           MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                    {
+            catch(Exception ex)
+            {
 
-                        insercao.Incluir();
-
-                        limpar_campos();
-
-                        carregar_dgv();
-
-                        //gerar_id_codigo();
-
-                        MessageBox.Show("Inserção efetuada com sucesso.", "Atenção!",
-                                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                    }
-
-                }
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -186,44 +234,56 @@ namespace Aplicativo_NET_Framawork_13.View
         private void btn_alterar_Click(object sender, EventArgs e)
         {
 
-            if(String.IsNullOrEmpty(txt_pesquisar_nome.Text) || String.IsNullOrEmpty(txt_pesquisar_unidade_federal.Text))
+            try
             {
 
-                MessageBox.Show("Preencha os campos Nome e Un. Federal antes de prosseguir.",
-                                "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (String.IsNullOrEmpty(txt_pesquisar_nome.Text) || String.IsNullOrEmpty(txt_pesquisar_unidade_federal.Text))
+                {
+
+                    MessageBox.Show("Preencha os campos Nome e Un. Federal antes de prosseguir.",
+                                    "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+                else
+                {
+
+                    Model.Cidade alteracao = new Model.Cidade()
+                    {
+
+                        id = int.Parse(txt_pesquisar_id.Text),
+
+                        nome = txt_pesquisar_nome.Text,
+
+                        uf = txt_pesquisar_unidade_federal.Text.ToUpper()
+
+                    };
+
+                    if (MessageBox.Show("Tem certeza de que deseja fazer alterações no registro " + txt_pesquisar_id.Text + "?",
+                                       "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+
+                        alteracao.Alterar();
+
+                        limpar_campos();
+
+                        desabilitar_elementos();
+
+                        carregar_dgv();
+
+                        MessageBox.Show("Alteração efetuada com sucesso.", "Atenção!",
+                                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                    }
+
+                }
 
             }
 
-            else
+            catch (Exception ex)
             {
 
-                Model.Cidade alteracao = new Model.Cidade()
-                {
-
-                    id = int.Parse(txt_pesquisar_id.Text),
-
-                    nome = txt_pesquisar_nome.Text,
-
-                    uf = txt_pesquisar_unidade_federal.Text.ToUpper()
-
-                };
-
-                if(MessageBox.Show("Tem certeza de que deseja fazer alterações no registro " + txt_pesquisar_id.Text + "?",
-                                   "Atenção!", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-                {
-
-                    alteracao.Alterar();
-
-                    limpar_campos();
-
-                    desabilitar_elementos();
-
-                    carregar_dgv();
-
-                    MessageBox.Show("Alteração efetuada com sucesso.", "Atenção!",
-                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-
-                }
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -232,70 +292,94 @@ namespace Aplicativo_NET_Framawork_13.View
         private void btn_cancelar_Click(object sender, EventArgs e)
         {
 
-            if(String.IsNullOrEmpty(txt_nome_cidade.Text) && String.IsNullOrEmpty(txt_uf_cidade.Text)
-               && String.IsNullOrEmpty(txt_pesquisar_id.Text) && String.IsNullOrEmpty(txt_pesquisar_nome.Text)
-               && String.IsNullOrEmpty(txt_pesquisar_unidade_federal.Text) && btn_pesquisar.Enabled == false)
+            try
             {
 
-                MessageBox.Show("Não há nada a ser cancelado.", "Atenção!",
-                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (String.IsNullOrEmpty(txt_nome_cidade.Text) && String.IsNullOrEmpty(txt_uf_cidade.Text)
+                    && String.IsNullOrEmpty(txt_pesquisar_id.Text) && String.IsNullOrEmpty(txt_pesquisar_nome.Text)
+                    && String.IsNullOrEmpty(txt_pesquisar_unidade_federal.Text) && btn_pesquisar.Enabled == false)
+                {
+
+                    MessageBox.Show("Não há nada a ser cancelado.", "Atenção!",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+
+                else if (btn_pesquisar.Enabled == true)
+                {
+
+                    txt_pesquisar_id.Clear();
+
+                    txt_pesquisar_nome.Clear();
+
+                    txt_pesquisar_nome.Enabled = false;
+
+                    txt_pesquisar_unidade_federal.Clear();
+
+                    txt_pesquisar_unidade_federal.Enabled = false;
+
+                    btn_pesquisar.Enabled = false;
+
+                }
+
+                else
+                {
+
+                    limpar_campos();
+
+                    desabilitar_elementos();
+
+                }
+
+                //carregar_dgv();
 
             }
 
-            else if(btn_pesquisar.Enabled == true)
+            catch (Exception ex)
             {
 
-                txt_pesquisar_id.Clear();
-
-                txt_pesquisar_nome.Clear();
-
-                txt_pesquisar_nome.Enabled = false;
-
-                txt_pesquisar_unidade_federal.Clear();
-
-                txt_pesquisar_unidade_federal.Enabled = false;
-
-                btn_pesquisar.Enabled = false;
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
-
-            else
-            {
-
-                limpar_campos();
-
-                desabilitar_elementos();
-
-            }
-
-            //carregar_dgv();
 
         }
 
         private void btn_excluir_Click(object sender, EventArgs e)
         {
 
-            Model.Cidade exclusao = new Model.Cidade()
+            try
             {
 
-                id = int.Parse(txt_pesquisar_id.Text)
+                Model.Cidade exclusao = new Model.Cidade()
+                {
 
-            };
+                    id = int.Parse(txt_pesquisar_id.Text)
 
-            if(MessageBox.Show("Realmente deseja apagar o registro " + txt_pesquisar_id.Text + "?", "Atenção!",
-                               MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                };
+
+                if (MessageBox.Show("Realmente deseja apagar o registro " + txt_pesquisar_id.Text + "?", "Atenção!",
+                                   MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+
+                    exclusao.Deletar();
+
+                    limpar_campos();
+
+                    desabilitar_elementos();
+
+                    carregar_dgv();
+
+                    MessageBox.Show("Exclusão efetuada com sucesso.", "Atenção!",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+
+                }
+
+            }
+
+            catch (Exception ex)
             {
 
-                exclusao.Deletar();
-
-                limpar_campos();
-
-                desabilitar_elementos();
-
-                carregar_dgv();
-
-                MessageBox.Show("Exclusão efetuada com sucesso.", "Atenção!",
-                                MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -304,28 +388,52 @@ namespace Aplicativo_NET_Framawork_13.View
         void limpar_campos()
         {
 
-            txt_codigo_cidade.Clear();
+            try
+            {
 
-            txt_nome_cidade.Clear();
+                txt_codigo_cidade.Clear();
 
-            txt_uf_cidade.Clear();
+                txt_nome_cidade.Clear();
 
-            txt_pesquisar_id.Clear();
+                txt_uf_cidade.Clear();
 
-            txt_pesquisar_nome.Clear();
+                txt_pesquisar_id.Clear();
 
-            txt_pesquisar_unidade_federal.Clear();
+                txt_pesquisar_nome.Clear();
+
+                txt_pesquisar_unidade_federal.Clear();
+
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
         void carregar_dgv()
         {
 
-            Model.Cidade cidade = new Model.Cidade();
+            try
+            {
 
-            cidade.Select();
+                Model.Cidade cidade = new Model.Cidade();
 
-            dgv_registros.DataSource = Database.tabela_de_dados ;
+                cidade.Select();
+
+                dgv_registros.DataSource = Database.tabela_de_dados;
+
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
@@ -353,74 +461,98 @@ namespace Aplicativo_NET_Framawork_13.View
         void desabilitar_elementos()
         {
 
-            // Desabilitando os elementos desnecessários:
+            try
+            {
 
-            txt_pesquisar_nome.Enabled = false;
+                // Desabilitando os elementos desnecessários:
 
-            txt_pesquisar_unidade_federal.Enabled = false;
+                txt_pesquisar_nome.Enabled = false;
 
-            btn_alterar.Enabled = false;
+                txt_pesquisar_unidade_federal.Enabled = false;
 
-            btn_excluir.Enabled = false;
+                btn_alterar.Enabled = false;
 
-            btn_pesquisar.Enabled = false;
+                btn_excluir.Enabled = false;
 
-            // Habilitando os elementos necessários:
+                btn_pesquisar.Enabled = false;
 
-            txt_nome_cidade.Enabled = true;
+                // Habilitando os elementos necessários:
 
-            txt_uf_cidade.Enabled = true;
+                txt_nome_cidade.Enabled = true;
 
-            btn_incluir.Enabled = true;
+                txt_uf_cidade.Enabled = true;
+
+                btn_incluir.Enabled = true;
+
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
         private void dgv_registros_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
 
-            if(dgv_registros.RowCount > 0)
+            try
             {
 
-                if (btn_alterar.Enabled == false && btn_excluir.Enabled == false)
+                if (dgv_registros.RowCount > 0)
                 {
 
-                    string texto = "Opções disponíveis:\n\n" +
-                                   "Alterar: caso deseje alterar um registro já existente, preencha " +
-                                   "os campos Nome e Un. Federal, ao lado da tabela, com as novas " +
-                                   "informações. O campo ID serve somente para referenciar o registro " +
-                                   "que foi clicado duas vezes.\n\n" +
-                                   "Deletar: nesse caso, apenas de um duplo clique no registro " +
-                                   "que deseja apagar.";
+                    if (btn_alterar.Enabled == false && btn_excluir.Enabled == false)
+                    {
 
-                    MessageBox.Show(texto, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        string texto = "Opções disponíveis:\n\n" +
+                                       "Alterar: caso deseje alterar um registro já existente, preencha " +
+                                       "os campos Nome e Un. Federal, ao lado da tabela, com as novas " +
+                                       "informações. O campo ID serve somente para referenciar o registro " +
+                                       "que foi clicado duas vezes.\n\n" +
+                                       "Deletar: nesse caso, apenas de um duplo clique no registro " +
+                                       "que deseja apagar.";
+
+                        MessageBox.Show(texto, "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                    }
+
+                    // Habilitando os elementos necessários:
+
+                    txt_pesquisar_nome.Enabled = true;
+
+                    txt_pesquisar_unidade_federal.Enabled = true;
+
+                    btn_alterar.Enabled = true;
+
+                    btn_excluir.Enabled = true;
+
+                    // Desabilitando os elementos desnecessários:
+
+                    txt_nome_cidade.Enabled = false;
+
+                    txt_uf_cidade.Enabled = false;
+
+                    btn_incluir.Enabled = false;
+
+                    // Definido os valores das TextBoxes de pesquisa:
+
+                    txt_pesquisar_id.Text = dgv_registros.CurrentRow.Cells[0].Value.ToString();
+
+                    txt_pesquisar_nome.Text = dgv_registros.CurrentRow.Cells[1].Value.ToString();
+
+                    txt_pesquisar_unidade_federal.Text = dgv_registros.CurrentRow.Cells[2].Value.ToString();
 
                 }
 
-                // Habilitando os elementos necessários:
+            }
 
-                txt_pesquisar_nome.Enabled = true;
+            catch (Exception ex)
+            {
 
-                txt_pesquisar_unidade_federal.Enabled = true;
-
-                btn_alterar.Enabled = true;
-
-                btn_excluir.Enabled = true;
-
-                // Desabilitando os elementos desnecessários:
-
-                txt_nome_cidade.Enabled = false;
-
-                txt_uf_cidade.Enabled = false;
-
-                btn_incluir.Enabled = false;
-
-                // Definido os valores das TextBoxes de pesquisa:
-
-                txt_pesquisar_id.Text = dgv_registros.CurrentRow.Cells[0].Value.ToString();
-
-                txt_pesquisar_nome.Text = dgv_registros.CurrentRow.Cells[1].Value.ToString();
-
-                txt_pesquisar_unidade_federal.Text = dgv_registros.CurrentRow.Cells[2].Value.ToString();
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -429,19 +561,31 @@ namespace Aplicativo_NET_Framawork_13.View
         private void txt_pesquisar_nome_KeyPress(object sender, KeyPressEventArgs e)
         {
 
-            if(char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar))
+            try
             {
 
-                e.Handled = false;
+                if (char.IsLetter(e.KeyChar) || char.IsControl(e.KeyChar))
+                {
 
-                //busca_personalizada(txt_pesquisar_nome.Text);
+                    e.Handled = false;
+
+                    //busca_personalizada(txt_pesquisar_nome.Text);
+
+                }
+
+                else
+                {
+
+                    e.Handled = true;
+
+                }
 
             }
 
-            else
+            catch (Exception ex)
             {
 
-                e.Handled = true;
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -450,35 +594,59 @@ namespace Aplicativo_NET_Framawork_13.View
         private void dgv_registros_Click(object sender, EventArgs e)
         {
 
-            if(btn_pesquisar.Enabled == false)
+            try
             {
 
-                MessageBox.Show("Digite no campo Nome e então clique em pesquisar para encontrar um determinado registro.",
-                                "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                if (btn_pesquisar.Enabled == false)
+                {
+
+                    MessageBox.Show("Digite no campo Nome e então clique em pesquisar para encontrar um determinado registro.",
+                                    "Atenção!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+
+                }
+
+                txt_pesquisar_nome.Enabled = true;
+
+                btn_pesquisar.Enabled = true;
 
             }
 
-            txt_pesquisar_nome.Enabled = true;
+            catch (Exception ex)
+            {
 
-            btn_pesquisar.Enabled = true;
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 
         private void btn_pesquisar_Click(object sender, EventArgs e)
         {
 
-            Model.Cidade cidade = new Model.Cidade()
+            try
             {
 
-                nome = txt_pesquisar_nome.Text
+                Model.Cidade cidade = new Model.Cidade()
+                {
 
-            };
+                    nome = txt_pesquisar_nome.Text
 
-            cidade.SelectByName();
+                };
 
-            dgv_registros.DataSource = Database.tabela_de_dados;
+                cidade.SelectByName();
 
-            txt_pesquisar_nome.Clear();
+                dgv_registros.DataSource = Database.tabela_de_dados;
+
+                txt_pesquisar_nome.Clear();
+
+            }
+
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
 
         }
 

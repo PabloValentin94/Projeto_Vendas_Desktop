@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
+using System.Runtime.CompilerServices;
 
 namespace Aplicativo_NET_Framawork_13
 {
@@ -22,6 +23,8 @@ namespace Aplicativo_NET_Framawork_13
 
         public static DataTable tabela_de_dados;
 
+        private static string file_name = "Database";
+
         public static void Abrir_Conexao()
         {
 
@@ -30,16 +33,16 @@ namespace Aplicativo_NET_Framawork_13
 
                 // Criando uma conexão com o MySQL e abrindo-a.
 
-                conexao = new MySqlConnection("server=localhost;port=3307;uid=root;pwd=etecjau");
+                conexao = new MySqlConnection("server=localhost;port=3306;uid=root;pwd=etecjau");
 
                 conexao.Open();
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -57,10 +60,10 @@ namespace Aplicativo_NET_Framawork_13
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -117,11 +120,9 @@ namespace Aplicativo_NET_Framawork_13
                                            "email varchar(100)," +
                                            "data_nascimento date," +
                                            "renda double," +
-                                           "bloqueio_venda bool," +
+                                           "bloqueio_venda boolean," +
                                            "foto varchar(100)," +
-                                           "fk_cidade integer," +
-                                           "cidade varchar(40)," +
-                                           "uf char(02))", conexao);
+                                           "fk_cidade integer)", conexao);
 
                 comando.ExecuteNonQuery();
 
@@ -147,10 +148,35 @@ namespace Aplicativo_NET_Framawork_13
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+
+        }
+
+        public static void Apagar_Banco()
+        {
+
+            try
+            {
+
+                Abrir_Conexao();
+
+                comando = new MySqlCommand("DROP DATABASE IF EXISTS db_vendas", conexao);
+
+                comando.ExecuteNonQuery();
+
+                Fechar_Conexao();
+
+            }
+
+            catch(Exception ex)
+            {
+
+                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
