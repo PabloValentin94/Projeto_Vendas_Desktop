@@ -28,7 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCategoria));
             this.grp_buscar_alterar_categorias = new System.Windows.Forms.GroupBox();
+            this.btn_resetar = new System.Windows.Forms.Button();
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.txt_pesquisar_nome = new System.Windows.Forms.TextBox();
             this.lbl_pesquisar_nome = new System.Windows.Forms.Label();
@@ -44,7 +46,6 @@
             this.txt_codigo_categoria = new System.Windows.Forms.TextBox();
             this.lbl_nome_categoria = new System.Windows.Forms.Label();
             this.lbl_codigo_categoria = new System.Windows.Forms.Label();
-            this.btn_resetar = new System.Windows.Forms.Button();
             this.grp_buscar_alterar_categorias.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_registros)).BeginInit();
             this.SuspendLayout();
@@ -66,6 +67,19 @@
             this.grp_buscar_alterar_categorias.TabIndex = 35;
             this.grp_buscar_alterar_categorias.TabStop = false;
             this.grp_buscar_alterar_categorias.Text = "Alterar / Pesquisar:";
+            // 
+            // btn_resetar
+            // 
+            this.btn_resetar.BackColor = System.Drawing.Color.Magenta;
+            this.btn_resetar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btn_resetar.ForeColor = System.Drawing.Color.White;
+            this.btn_resetar.Location = new System.Drawing.Point(658, 57);
+            this.btn_resetar.Name = "btn_resetar";
+            this.btn_resetar.Size = new System.Drawing.Size(100, 31);
+            this.btn_resetar.TabIndex = 11;
+            this.btn_resetar.Text = "Resetar";
+            this.btn_resetar.UseVisualStyleBackColor = false;
+            this.btn_resetar.Click += new System.EventHandler(this.btn_resetar_Click);
             // 
             // btn_pesquisar
             // 
@@ -243,19 +257,6 @@
             this.lbl_codigo_categoria.TabIndex = 24;
             this.lbl_codigo_categoria.Text = "Código:";
             // 
-            // btn_resetar
-            // 
-            this.btn_resetar.BackColor = System.Drawing.Color.Magenta;
-            this.btn_resetar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btn_resetar.ForeColor = System.Drawing.Color.White;
-            this.btn_resetar.Location = new System.Drawing.Point(658, 57);
-            this.btn_resetar.Name = "btn_resetar";
-            this.btn_resetar.Size = new System.Drawing.Size(100, 31);
-            this.btn_resetar.TabIndex = 11;
-            this.btn_resetar.Text = "Resetar";
-            this.btn_resetar.UseVisualStyleBackColor = false;
-            this.btn_resetar.Click += new System.EventHandler(this.btn_resetar_Click);
-            // 
             // FrmCategoria
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -272,6 +273,7 @@
             this.Controls.Add(this.txt_codigo_categoria);
             this.Controls.Add(this.lbl_nome_categoria);
             this.Controls.Add(this.lbl_codigo_categoria);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCategoria";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Categorias";

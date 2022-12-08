@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCidade));
             this.grp_buscar_alterar_cidades = new System.Windows.Forms.GroupBox();
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.txt_pesquisar_nome = new System.Windows.Forms.TextBox();
@@ -306,6 +307,7 @@
             this.Controls.Add(this.txt_codigo_cidade);
             this.Controls.Add(this.lbl_nome_cidade);
             this.Controls.Add(this.lbl_codigo_cidade);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCidade";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Cidades";

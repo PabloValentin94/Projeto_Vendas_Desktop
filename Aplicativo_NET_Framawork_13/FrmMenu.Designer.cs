@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMenu));
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.cadastrosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.categoriasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -38,6 +39,7 @@
             this.caixaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.excluir_banco_dadosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -59,15 +61,18 @@
             this.clientesToolStripMenuItem,
             this.marcasToolStripMenuItem,
             this.produtosToolStripMenuItem,
+            this.toolStripSeparator2,
             this.caixaToolStripMenuItem,
             this.toolStripSeparator1,
             this.excluir_banco_dadosToolStripMenuItem});
+            this.cadastrosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cadastrosToolStripMenuItem.Image")));
             this.cadastrosToolStripMenuItem.Name = "cadastrosToolStripMenuItem";
-            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(71, 20);
+            this.cadastrosToolStripMenuItem.Size = new System.Drawing.Size(87, 20);
             this.cadastrosToolStripMenuItem.Text = "Cadastros";
             // 
             // categoriasToolStripMenuItem
             // 
+            this.categoriasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("categoriasToolStripMenuItem.Image")));
             this.categoriasToolStripMenuItem.Name = "categoriasToolStripMenuItem";
             this.categoriasToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.categoriasToolStripMenuItem.Text = "Categorias";
@@ -75,6 +80,7 @@
             // 
             // cidadesToolStripMenuItem
             // 
+            this.cidadesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("cidadesToolStripMenuItem.Image")));
             this.cidadesToolStripMenuItem.Name = "cidadesToolStripMenuItem";
             this.cidadesToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.cidadesToolStripMenuItem.Text = "Cidades";
@@ -82,6 +88,7 @@
             // 
             // clientesToolStripMenuItem
             // 
+            this.clientesToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("clientesToolStripMenuItem.Image")));
             this.clientesToolStripMenuItem.Name = "clientesToolStripMenuItem";
             this.clientesToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.clientesToolStripMenuItem.Text = "Clientes";
@@ -89,6 +96,7 @@
             // 
             // marcasToolStripMenuItem
             // 
+            this.marcasToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("marcasToolStripMenuItem.Image")));
             this.marcasToolStripMenuItem.Name = "marcasToolStripMenuItem";
             this.marcasToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.marcasToolStripMenuItem.Text = "Marcas";
@@ -96,6 +104,7 @@
             // 
             // produtosToolStripMenuItem
             // 
+            this.produtosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("produtosToolStripMenuItem.Image")));
             this.produtosToolStripMenuItem.Name = "produtosToolStripMenuItem";
             this.produtosToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.produtosToolStripMenuItem.Text = "Produtos";
@@ -103,6 +112,7 @@
             // 
             // caixaToolStripMenuItem
             // 
+            this.caixaToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("caixaToolStripMenuItem.Image")));
             this.caixaToolStripMenuItem.Name = "caixaToolStripMenuItem";
             this.caixaToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.caixaToolStripMenuItem.Text = "Caixa";
@@ -115,10 +125,16 @@
             // 
             // excluir_banco_dadosToolStripMenuItem
             // 
+            this.excluir_banco_dadosToolStripMenuItem.Image = ((System.Drawing.Image)(resources.GetObject("excluir_banco_dadosToolStripMenuItem.Image")));
             this.excluir_banco_dadosToolStripMenuItem.Name = "excluir_banco_dadosToolStripMenuItem";
             this.excluir_banco_dadosToolStripMenuItem.Size = new System.Drawing.Size(197, 22);
             this.excluir_banco_dadosToolStripMenuItem.Text = "Excluir Banco de Dados";
             this.excluir_banco_dadosToolStripMenuItem.Click += new System.EventHandler(this.excluir_banco_dadosToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator2
+            // 
+            this.toolStripSeparator2.Name = "toolStripSeparator2";
+            this.toolStripSeparator2.Size = new System.Drawing.Size(194, 6);
             // 
             // FrmMenu
             // 
@@ -126,6 +142,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
             this.Controls.Add(this.menuStrip1);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "FrmMenu";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -150,6 +167,7 @@
         private System.Windows.Forms.ToolStripMenuItem caixaToolStripMenuItem;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem excluir_banco_dadosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator2;
     }
 }
 

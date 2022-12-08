@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMarca));
             this.grp_buscar_alterar_marcas = new System.Windows.Forms.GroupBox();
             this.btn_pesquisar = new System.Windows.Forms.Button();
             this.txt_pesquisar_nome = new System.Windows.Forms.TextBox();
@@ -262,6 +263,7 @@
             this.Controls.Add(this.txt_codigo_marca);
             this.Controls.Add(this.lbl_nome_marca);
             this.Controls.Add(this.lbl_codigo_marca);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmMarca";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Marcas";

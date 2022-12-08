@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmCliente));
             this.grp_buscar_clientes = new System.Windows.Forms.GroupBox();
             this.btn_resetar = new System.Windows.Forms.Button();
             this.btn_pesquisar = new System.Windows.Forms.Button();
@@ -446,6 +447,7 @@
             this.Controls.Add(this.txt_codigo_cliente);
             this.Controls.Add(this.lbl_nome_cliente);
             this.Controls.Add(this.lbl_codigo_cliente);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FrmCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Cadastro de Clientes";

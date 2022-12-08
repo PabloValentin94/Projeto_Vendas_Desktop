@@ -16,8 +16,6 @@ namespace Aplicativo_NET_Framawork_13
     public partial class FrmMenu : Form
     {
 
-        private string file_name = "FrmMenu.cs";
-
         public FrmMenu()
         {
 
@@ -38,7 +36,7 @@ namespace Aplicativo_NET_Framawork_13
             catch(Exception ex)
             {
 
-                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -59,7 +57,7 @@ namespace Aplicativo_NET_Framawork_13
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -80,7 +78,7 @@ namespace Aplicativo_NET_Framawork_13
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -101,7 +99,7 @@ namespace Aplicativo_NET_Framawork_13
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -122,7 +120,7 @@ namespace Aplicativo_NET_Framawork_13
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -143,7 +141,7 @@ namespace Aplicativo_NET_Framawork_13
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -164,7 +162,7 @@ namespace Aplicativo_NET_Framawork_13
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -197,7 +195,7 @@ namespace Aplicativo_NET_Framawork_13
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + " \n\nArquivo: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 

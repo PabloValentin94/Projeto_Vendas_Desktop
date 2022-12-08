@@ -14,6 +14,8 @@ namespace Aplicativo_NET_Framawork_13.Model
     public class Cidade
     {
 
+        private string file_name = "Cidade";
+
 		public int id { get; set; }
 
 		public string nome { get; set; }
@@ -40,10 +42,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nClasse: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -72,10 +74,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nClasse: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -99,10 +101,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nClasse: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -130,10 +132,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
 			}
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nClasse: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
 
@@ -166,10 +168,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nClasse: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
 

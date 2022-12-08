@@ -15,6 +15,8 @@ namespace Aplicativo_NET_Framawork_13
     public class Database
     {
 
+        private static string file_name = "Database";
+
         public static MySqlConnection conexao;
 
         public static MySqlCommand comando;
@@ -22,8 +24,6 @@ namespace Aplicativo_NET_Framawork_13
         public static MySqlDataAdapter adaptador;
 
         public static DataTable tabela_de_dados;
-
-        private static string file_name = "Database";
 
         public static void Abrir_Conexao()
         {

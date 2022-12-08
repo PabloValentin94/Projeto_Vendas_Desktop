@@ -59,15 +59,5 @@ namespace Aplicativo_NET_Framawork_13.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Consulta um recurso localizado do tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap Epilepsia {
-            get {
-                object obj = ResourceManager.GetObject("Epilepsia", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
     }
 }

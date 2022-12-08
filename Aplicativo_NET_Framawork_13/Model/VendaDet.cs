@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 namespace Aplicativo_NET_Framawork_13.Model
 {
 
-    internal class VendaDet
+    public class VendaDet
     {
 
-
+        private string file_name = "VendaDet";
 
     }
 

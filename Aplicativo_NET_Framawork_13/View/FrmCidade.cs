@@ -37,7 +37,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch(Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
             
             }
 
@@ -88,7 +88,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch(Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -113,7 +113,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -225,7 +225,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch(Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -283,7 +283,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -338,7 +338,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -379,7 +379,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -408,7 +408,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -431,7 +431,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -489,7 +489,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -552,7 +552,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -585,7 +585,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -614,7 +614,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -644,7 +644,7 @@ namespace Aplicativo_NET_Framawork_13.View
             catch (Exception ex)
             {
 
-                MessageBox.Show(ex.Message + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + "\n\nForm: " + this.Name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 

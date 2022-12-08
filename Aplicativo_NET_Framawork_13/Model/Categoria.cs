@@ -1,17 +1,20 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using System.Data;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Aplicativo_NET_Framawork_13.Model
 {
 
     public  class Categoria
     {
+
+        private string file_name = "Categoria";
 
         public int id { get; set; }
 
@@ -35,10 +38,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nClasse: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -65,10 +68,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nClasse: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -92,10 +95,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nClasse: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
             }
 
@@ -123,10 +126,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nClasse: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
 
@@ -159,10 +162,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
             }
 
-            catch (Exception e)
+            catch (Exception ex)
             {
 
-                MessageBox.Show(e.Message, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show(ex.Message + " \n\nClasse: " + file_name, "Erro!", MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 return null;
 
