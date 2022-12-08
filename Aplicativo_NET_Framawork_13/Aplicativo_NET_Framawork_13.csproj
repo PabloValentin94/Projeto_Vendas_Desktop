@@ -32,6 +32,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Application_Icon.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="BouncyCastle.Crypto, Version=1.9.0.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
       <HintPath>..\packages\Portable.BouncyCastle.1.9.0\lib\net40\BouncyCastle.Crypto.dll</HintPath>
@@ -204,6 +207,8 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Application_Icon.ico" />
+    <Content Include="View\Resources_Used\Icons\Application_Icon.ico" />
     <Content Include="View\Resources_Used\Icons\Caixa_Registradora.ico" />
     <Content Include="View\Resources_Used\Icons\Categoria.ico" />
     <Content Include="View\Resources_Used\Icons\Cidade.ico" />
