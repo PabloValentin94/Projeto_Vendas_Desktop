@@ -10,7 +10,7 @@ namespace Aplicativo_NET_Framawork_13.Model
     public class VendaCab
     {
 
-        private string file_name = "VendaCab";
+        private readonly string file_name = "VendaCab";
 
     }
 

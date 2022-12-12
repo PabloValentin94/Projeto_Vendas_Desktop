@@ -14,7 +14,7 @@ namespace Aplicativo_NET_Framawork_13.Model
     public class Cidade
     {
 
-        private string file_name = "Cidade";
+        private readonly string file_name = "Cidade";
 
 		public int id { get; set; }
 

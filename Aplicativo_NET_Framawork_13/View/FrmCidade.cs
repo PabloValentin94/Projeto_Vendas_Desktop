@@ -305,27 +305,14 @@ namespace Aplicativo_NET_Framawork_13.View
 
                 }
 
-                else if (btn_pesquisar.Enabled == true)
-                {
-
-                    txt_pesquisar_id.Clear();
-
-                    txt_pesquisar_nome.Clear();
-
-                    txt_pesquisar_nome.Enabled = false;
-
-                    txt_pesquisar_unidade_federal.Clear();
-
-                    txt_pesquisar_unidade_federal.Enabled = false;
-
-                    btn_pesquisar.Enabled = false;
-
-                }
-
                 else
                 {
 
                     limpar_campos();
+
+                    txt_pesquisar_nome.Enabled = false;
+
+                    txt_pesquisar_unidade_federal.Enabled = false;
 
                     desabilitar_elementos();
 

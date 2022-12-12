@@ -133,12 +133,25 @@ namespace Aplicativo_NET_Framawork_13
                                            "nome varchar(100)," +
                                            "fornecedor varchar(100)," +
                                            "estoque integer, " +
-                                           "preco_venda double, " +
+                                           "preco_venda double," +
                                            "foto varchar(100)," +
                                            "fk_categoria integer," +
-                                           "fk_marca integer," +
-                                           "categoria varchar(30)," +
-                                           "marca varchar(30))", conexao);
+                                           "fk_marca integer)", conexao);
+
+                comando.ExecuteNonQuery();
+
+                // Criando a tabela Caixa.
+
+                comando = new MySqlCommand("CREATE TABLE IF NOT EXISTS Caixa" +
+                                           "(id_cliente integer," +
+                                           "id_venda integer," +
+                                           "valor_pagamento double," +
+                                           "dinheiro boolean," +
+                                           "pix boolean," +
+                                           "cartao_credito boolean," +
+                                           "cheque boolean," +
+                                           "boleto boolean," +
+                                           "fk_venda_cab integer)", conexao);
 
                 comando.ExecuteNonQuery();
 
@@ -170,6 +183,8 @@ namespace Aplicativo_NET_Framawork_13
                 comando.ExecuteNonQuery();
 
                 Fechar_Conexao();
+
+                Criar_Banco();
 
             }
 

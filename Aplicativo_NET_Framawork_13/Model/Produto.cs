@@ -14,7 +14,7 @@ namespace Aplicativo_NET_Framawork_13.Model
     public class Produto
     {
 
-        private string file_name = "Produto";
+        private readonly string file_name = "Produto";
 
         public int id { get; set; }
 
@@ -45,10 +45,9 @@ namespace Aplicativo_NET_Framawork_13.Model
                 Database.Abrir_Conexao();
 
                 Database.comando = new MySqlCommand("INSERT INTO Produto(nome, fornecedor, estoque, " +
-                                                    "preco_venda, foto, " +
-                                                    "fk_categoria, fk_marca, categoria, marca) " +
+                                                    "preco_venda, foto, fk_categoria, fk_marca) " +
                                                     "VALUES(@nome, @fornecedor, @estoque, @preco_venda, @foto, " +
-                                                    "@fk_categoria, @fk_marca, @categoria, @marca)", Database.conexao);
+                                                    "@fk_categoria, @fk_marca)", Database.conexao);
 
                 Database.comando.Parameters.AddWithValue("@nome", this.nome);
 
@@ -63,10 +62,6 @@ namespace Aplicativo_NET_Framawork_13.Model
                 Database.comando.Parameters.AddWithValue("@fk_categoria", this.fk_categoria);
 
                 Database.comando.Parameters.AddWithValue("@fk_marca", this.fk_marca);
-
-                Database.comando.Parameters.AddWithValue("@categoria", this.categoria);
-
-                Database.comando.Parameters.AddWithValue("@marca", this.marca);
 
                 Database.comando.ExecuteNonQuery();
 
@@ -94,7 +89,7 @@ namespace Aplicativo_NET_Framawork_13.Model
                 Database.comando = new MySqlCommand("UPDATE Produto SET nome = @nome, fornecedor = @fornecedor, esto" +
                                                     "preco_venda = @preco_venda, foto = @foto, " +
                                                     "fk_categoria = @fk_categoria, fk_marca = @fk_marca, " +
-                                                    "categoria = @categoria, marca = @marca WHERE id = @id", Database.conexao);
+                                                    "WHERE id = @id", Database.conexao);
 
                 Database.comando.Parameters.AddWithValue("@id", this.id);
 
@@ -109,10 +104,6 @@ namespace Aplicativo_NET_Framawork_13.Model
                 Database.comando.Parameters.AddWithValue("@fk_categoria", this.fk_categoria);
 
                 Database.comando.Parameters.AddWithValue("@fk_marca", this.fk_marca);
-
-                Database.comando.Parameters.AddWithValue("@categoria", this.categoria);
-
-                Database.comando.Parameters.AddWithValue("@marca", this.marca);
 
                 Database.comando.ExecuteNonQuery();
 
@@ -164,7 +155,10 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.Abrir_Conexao();
 
-                Database.comando = new MySqlCommand("SELECT * FROM Produto", Database.conexao);
+                Database.comando = new MySqlCommand("SELECT pro.*, mar.nome as marca, cat.nome as categoria " +
+                                                    "FROM Produto pro " +
+                                                    "INNER JOIN Marca mar ON pro.fk_marca = mar.id " +
+                                                    "INNER JOIN Categoria cat ON pro.fk_categoria = cat.id", Database.conexao);
 
                 Database.adaptador = new MySqlDataAdapter(Database.comando);
 
@@ -197,7 +191,12 @@ namespace Aplicativo_NET_Framawork_13.Model
 
                 Database.Abrir_Conexao();
 
-                Database.comando = new MySqlCommand("SELECT * FROM Produto WHERE nome LIKE @nome", Database.conexao);
+                Database.comando = new MySqlCommand("SELECT pro.*, mar.nome as marca, cat.nome as categoria " +
+                                                    "FROM Produto pro " +
+                                                    "INNER JOIN Marca mar ON pro.fk_marca = mar.id " +
+                                                    "INNER JOIN Categoria cat ON pro.fk_categoria = cat.id " +
+                                                    "WHERE nome LIKE @nome " +
+                                                    "ORDER BY pro.nome ASC", Database.conexao);
 
                 Database.comando.Parameters.AddWithValue("@nome", "%" + this.nome + "%");
 

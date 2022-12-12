@@ -14,7 +14,7 @@ namespace Aplicativo_NET_Framawork_13.Model
     public  class Categoria
     {
 
-        private string file_name = "Categoria";
+        private readonly string file_name = "Categoria";
 
         public int id { get; set; }
 

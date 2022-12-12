@@ -131,11 +131,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
                     fk_categoria = (int)cb_categoria_produto.SelectedValue,
 
-                    fk_marca = (int)cb_marca_produto.SelectedValue,
-
-                    categoria = cb_categoria_produto.Text,
-
-                    marca = cb_marca_produto.Text
+                    fk_marca = (int)cb_marca_produto.SelectedValue
 
                 };
 
@@ -236,11 +232,7 @@ namespace Aplicativo_NET_Framawork_13.View
 
                 fk_categoria = (int)cb_categoria_produto.SelectedValue,
 
-                fk_marca = (int)cb_marca_produto.SelectedValue,
-
-                categoria = cb_categoria_produto.Text,
-
-                marca = cb_marca_produto.Text
+                fk_marca = (int)cb_marca_produto.SelectedValue
 
             };
 

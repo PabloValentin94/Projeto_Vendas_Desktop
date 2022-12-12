@@ -10,7 +10,7 @@ namespace Aplicativo_NET_Framawork_13.Model
     public class VendaDet
     {
 
-        private string file_name = "VendaDet";
+        private readonly string file_name = "VendaDet";
 
     }
 

@@ -14,7 +14,7 @@ namespace Aplicativo_NET_Framawork_13.Model
     public class Cliente
     {
 
-        private string file_name = "Cliente"; 
+        private readonly string file_name = "Cliente"; 
 
         public int id { get; set; }
 

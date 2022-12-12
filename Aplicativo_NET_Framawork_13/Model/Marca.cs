@@ -1,11 +1,12 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
+using System.Data;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
 
 namespace Aplicativo_NET_Framawork_13.Model
 {
@@ -13,7 +14,7 @@ namespace Aplicativo_NET_Framawork_13.Model
     public class Marca
     {
 
-        private string file_name = "Marca";
+        private readonly string file_name = "Marca";
 
         public int id;
 
