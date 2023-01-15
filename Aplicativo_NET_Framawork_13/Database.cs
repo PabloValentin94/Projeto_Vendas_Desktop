@@ -81,7 +81,7 @@ namespace Aplicativo_NET_Framawork_13
 
                 // Criando o banco de dados.
 
-                comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS db_vendas; USE db_vendas;", conexao);
+                comando = new MySqlCommand("CREATE DATABASE IF NOT EXISTS db_vendas_desktop; USE db_vendas_desktop;", conexao);
 
                 comando.ExecuteNonQuery();
 
@@ -178,7 +178,7 @@ namespace Aplicativo_NET_Framawork_13
 
                 Abrir_Conexao();
 
-                comando = new MySqlCommand("DROP DATABASE IF EXISTS db_vendas", conexao);
+                comando = new MySqlCommand("DROP DATABASE IF EXISTS db_vendas_desktop", conexao);
 
                 comando.ExecuteNonQuery();
 
